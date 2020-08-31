@@ -36,11 +36,11 @@ class AppFixtures extends Fixture
         $password = $this->encoder->encodePassword($user1, 'pass_1234');
         $user1->setPassword($password);
 
-        $manager->persist($user1); 
+        $manager->persist($user1);
         
-        for($i=0; $i<10; $i++){
-            
-            
+        
+        
+        for($i=0; $i<10; $i++){       
         $user2 = new User();
         $user2->setEmail($this->faker->email);
         $user2->setRoles(['']);
