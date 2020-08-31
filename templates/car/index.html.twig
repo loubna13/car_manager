@@ -1,19 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Car index{% endblock %}
+{% block title %}Liste de voitures{% endblock %}
 
 {% block body %}
-    <h1>Car index</h1>
+    <h1>Liste de voitures</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Brand</th>
-                <th>Year</th>
-                <th>Price</th>
+                <th>Marque</th>
+                <th>Année</th>
+                <th>Prix</th>
                 <th>Image</th>
-                <th>IsNew</th>
+                <th>Etat</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -25,12 +25,18 @@
                 <td>{{ car.year }}</td>
                 <td>{{ car.price }}</td>
                 <td>
-                <img src="{{ asset('uploads/images/cars/')}}{{ car.image }}" style="width:75px">
+                   <img src="{{ asset('uploads/images/cars/')}}{{ car.image }}" style="width:75px">
                 </td>
                 <td>{{ car.isNew ? 'Yes' : 'No' }}</td>
                 <td>
-                    <a href="{{ path('car_show', {'id': car.id}) }}">show</a>
-                    <a href="{{ path('car_edit', {'id': car.id}) }}">edit</a>
+                <td>    
+                    <a href="{{ path('car_show', {'id': car.id}) }}"><img src="{{ asset('../images/search.png')}}"></a>
+                </td>
+                <td>
+                    <a href="{{ path('car_edit', {'id': car.id}) }}"><img src="{{ asset('../images/edit.png')}}"></a>
+                </td>
+                 <td>    
+                    <a href="{{ path('car_delete', {'id': car.id}) }}"><img src="{{ asset('../images/delete.png')}}"></a>
                 </td>
             </tr>
         {% else %}
@@ -41,5 +47,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('car_new') }}">Create new</a>
+    <a href="{{ path('car_new') }}">Ajouter une voiture</a>
 {% endblock %}

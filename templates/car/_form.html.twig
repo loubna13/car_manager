@@ -1,4 +1,38 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+   <div class="container">
+	        <div class="form-row">
+	            <div class="form-group col-md-6">
+	                <label >Marque</label>
+	              {{ form_widget(form.brand ,{ 'attr' :{'placeholder':'Marque','class':'form-control'}})}}
+	            </div>
+	        </div>
+
+	        <div class="form-row">
+	           <div class="form-group col-md-6">
+	            <label for="">Année</label>
+	             
+	             {{ form_widget(form.year ,{ 'attr' :{'placeholder':'Année', 'class':'form-control'}}) }}
+	            </div>       
+	        </div>
+
+	        <div class="form-row">
+	            <div class="form-group col-md-6">
+	                <label >Prix</label>
+	                {{ form_widget(form.price ,{ 'attr' :{'placeholder':'Prix','class':'form-control'}}) }}
+	            </div>
+	        </div>
+	        
+            <div class="form-row">
+	             <div class="form-group col-md-6">
+	                 <label >Etat</label>
+
+	             {{ form_widget(form.isNew,{ 'attr' :{'placeholder':'Etat'}}) }}
+	             </div>
+	        </div>
+	    {{ form_widget(form) }}
+	    <button class="btnenreg">{{ button_label|default('Enregistrer') }}</button>
+
+   </div>
+    <br>
+    <br>
 {{ form_end(form) }}

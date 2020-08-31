@@ -19,6 +19,44 @@ class CarRepository extends ServiceEntityRepository
         parent::__construct($registry, Car::class);
     }
 
+    public function findFilter($form)
+    {
+        $qb = $this->createQueryBuilder('c');
+
+        if ($form['brand']) {
+            $qb->andWhere('c.brand = :brand')
+                ->setParameter('brand', $form['brand']);
+        }
+
+        if ($form['year']) {
+            $qb->andWhere('c.year = :year')
+                ->setParameter('year', $form['year']);
+        }
+
+        if ($form['price']) {
+            $qb->andWhere('c.price = :price')
+                ->setParameter('price', $form['price']);
+        }
+
+        if ($form['image']) {
+            $qb->andWhere('c.image= :image')
+                ->setParameter('image', $form['image']);
+        }
+
+        if ($form['isNew']) {
+            if ($form['isNew'] === 'yes') {
+                $qb->andWhere('c.isNew = true');
+            } else {
+                $qb->andWhere('c.isNew = false');
+            }
+        }
+
+        return $qb->orderBy('c.id', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     // /**
     //  * @return Car[] Returns an array of Car objects
     //  */

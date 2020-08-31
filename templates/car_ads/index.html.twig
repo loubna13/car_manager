@@ -1,0 +1,288 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} CarAds{% endblock %}
+
+{% block body %}
+ <!--== Page Title Area Start ==-->
+ {{ form_start(form) }}
+
+<div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="slideshowcontent">
+                        <div class="display-table">
+                            <div class="display-table-cell">
+                                <h1>Louer votre voiture aujourd'hui!</h1>
+                                <p>FOR AS LOW AS $10 A DAY PLUS 15% DISCOUNT <br> FOR OUR RETURNING CUSTOMERS</p>
+
+                                <div class="book-ur-car">
+                                    <form action="index2.html">
+                                        <div class="car-choose bookinput-item">
+										  {{ form_widget(form.brand)}}
+                                            <select class="custom-select">
+                                              <option selected>Choisir une voiture</option>
+                                              <option value="1">BMW</option>
+                                              <option value="2">Audi</option>
+                                              <option value="3">Lexus</option>
+                                            </select>
+                                        </div>                                           
+                                    
+                                        <div class="pick-date bookinput-item">
+                                           {{ form_widget(form.year,{ 'attr' :{'placeholder':'Année','class':'form-control'}})}}
+                                        </div>
+
+                                        <div class="retern-date bookinput-item">
+                                            {{ form_widget(form.price,{ 'attr' :{'placeholder':'Prix','class':'form-control'}})}}
+                                        </div>
+
+                                        
+                                        <div class="bookcar-btn bookinput-item">
+                                            <button type="submit">Trouver un véhicule</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+ {{ form_end(form) }}
+    <section id="page-title-area" class="section-padding overlay">
+        <div class="container">
+            <div class="row">
+                <!-- Page Title Start -->
+                <div class="col-lg-12">
+                    <div class="section-title  text-center">
+                        <h2>Nos Annonces</h2>
+                        <span class="title-line"><i class="fa fa-car"></i></span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <!-- Page Title End -->
+            </div>
+        </div>
+    </section>
+    <!--== Page Title Area End ==-->
+
+    <!--== Gallery Page Content Start ==-->
+    <section id="gallery-page-content" class="section-padding">
+        <div class="container">
+        	<div class="row">
+        		<div class="col-lg-12">
+					<div class="popular-cars-wrap">
+						<!-- Filtering Menu -->
+						<div class="popucar-menu text-center">
+							<a href="#" data-filter="*" class="active">all</a>
+							<a href="#" data-filter=".con">Conver</a>
+							<a href="#" data-filter=".hat">Truck</a>
+							<a href="#" data-filter=".mpv">MPV</a>
+							<a href="#" data-filter=".sedan">Sedan</a>
+							<a href="#" data-filter=".suv">SUV</a>
+						</div>
+						<!-- Filtering Menu -->
+       			
+						<div class="row popular-car-gird">
+							<!-- Single Popular Car Start -->
+							<div class="col-lg-4 col-md-6 con suv mpv">
+								<div class="single-popular-car">
+									<div class="p-car-thumbnails">
+										<a class="car-hover" href="{{ asset('images/car/car-1.jpg')}}">
+										  <img src="{{ asset('images/car/car-1.jpg')}}" alt="JSOFT">
+									   </a>
+									</div>
+
+									<div class="p-car-content">
+										<h3>
+											<a href="#">Peugeot</a>
+                                            <p> Peugeot 308, Skoda Scala, Renault Mégane, Ford Focus
+                                                ou semblable (Berline | CDMR)
+                                            </p>
+											<span class="price"><i class="fa fa-tag"></i> $55/jour</span>
+										</h3>
+
+										<h5>HATCHBACK</h5>
+
+										<div class="p-car-feature">
+											<a href="#">2017</a>
+											<a href="#">Transmission manuelle</a>
+											<a href="#">Climatisation</a>
+                                            <a href="#">4 portes</a>
+                                            <a href="#">5 places</a>
+                                            <a href="#">Climatisation</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Single Popular Car End -->
+
+							<!-- Single Popular Car Start -->
+							<div class="col-lg-4 col-md-6 con suv mpv">
+								<div class="single-popular-car">
+									<div class="p-car-thumbnails">
+										<a class="car-hover" href="{{ asset('images/car/car-2.jpg')}}">
+										  <img src="{{ asset('images/car/car-2.jpg')}}" alt="JSOFT">
+									   </a>
+									</div>
+
+									<div class="p-car-content">
+										<h3>
+											<a href="#">VW T-Roc</a>
+                                            <p> VW Golf VII aut., Volvo V40 aut. ou similaire (Berline | CLAR)
+                                            </p>
+											<span class="price"><i class="fa fa-tag"></i> $55/jour</span>
+										</h3>
+
+										<h5>HATCHBACK</h5>
+
+										<div class="p-car-feature">
+											<a href="#">2019</a>
+											<a href="#">Transmission automatique</a>
+											<a href="#">Climatisation</a>
+                                            <a href="#">4 portes</a>
+                                            <a href="#">5 places</a>
+                                            <a href="#">Climatisation</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Single Popular Car End -->
+
+							<!-- Single Popular Car Start -->
+							<div class="col-lg-4 col-md-6 con suv mpv">
+								<div class="single-popular-car">
+									<div class="p-car-thumbnails">
+										<a class="car-hover" href="{{ asset('images/car/car-2.jpg')}}">
+										  <img src="{{ asset('images/car/car-2.jpg')}}" alt="JSOFT">
+									   </a>
+									</div>
+
+									<div class="p-car-content">
+										<h3>
+											<a href="#">Audi Q3</a>
+                                            <p> VW Tiguan 4x2, Jeep Compass, BMW X1 sDrive ou similaire (Berline | ILMR)
+                                            </p>
+											<span class="price"><i class="fa fa-tag"></i> $55/jour</span>
+										</h3>
+
+										<h5>HATCHBACK</h5>
+
+										<div class="p-car-feature">
+											<a href="#">2016</a>
+											<a href="#">Transmission manuelle</a>
+											<a href="#">Climatisation</a>
+                                            <a href="#">5 portes</a>
+                                            <a href="#">5 places</a>
+                                            <a href="#">Climatisation disponible</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Single Popular Car End -->
+
+							<!-- Single Popular Car Start -->
+							<div class="col-lg-4 col-md-6 con suv mpv">
+								<div class="single-popular-car">
+									<div class="p-car-thumbnails">
+										<a class="car-hover" href="{{ asset('images/car/car-3.jpg')}}">
+										  <img src="{{ asset('images/car/car-3.jpg')}}" alt="JSOFT">
+									   </a>
+									</div>
+
+									<div class="p-car-content">
+										<h3>
+											<a href="#">Mercedes-AMG GT C Roadster</a>
+                                            <p> 
+                                               (Coupé Premium | XNAX)
+                                            </p>
+											<span class="price"><i class="fa fa-tag"></i> 150/jour</span>
+										</h3>
+
+										<h5>HATCHBACK</h5>
+
+										<div class="p-car-feature">
+											<a href="#">2019</a>
+											<a href="#">Transmission automatique</a>
+											<a href="#">Climatisation</a>
+                                            <a href="#">2 portes</a>
+                                            <a href="#">2 places</a>
+                                            <a href="#">Climatisation</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Single Popular Car End -->
+
+							<!-- Single Popular Car Start -->
+							<div class="col-lg-4 col-md-6 con suv mpv">
+								<div class="single-popular-car">
+									<div class="p-car-thumbnails">
+										<a class="car-hover" href="{{ asset('images/car/car-4.jpg')}}">
+										  <img src="{{ asset('images/car/car-4.jpg')}}" alt="JSOFT">
+									   </a>
+									</div>
+
+									<div class="p-car-content">
+										<h3>
+											<a href="#">BMW M340</a>
+                                            <p> 
+                                               (Berline Premium | FCAR)
+                                            </p>
+											<span class="price"><i class="fa fa-tag"></i> 100/jour</span>
+										</h3>
+
+										<h5>HATCHBACK</h5>
+
+										<div class="p-car-feature">
+											<a href="#">2017</a>
+											<a href="#">Transmission manuelle</a>
+											<a href="#">Climatisation</a>
+                                            <a href="#">4 portes</a>
+                                            <a href="#">5 places</a>
+                                            <a href="#">Climatisation</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Single Popular Car End -->
+
+							<!-- Single Popular Car Start -->
+							<div class="col-lg-4 col-md-6 con suv mpv">
+								<div class="single-popular-car">
+									<div class="p-car-thumbnails">
+										<a class="car-hover" href="{{ asset('images/car/car-5.jpg')}}">
+										  <img src="{{ asset('images/car/car-5.jpg')}}" alt="JSOFT">
+									   </a>
+									</div>
+
+									<div class="p-car-content">
+										<h3>
+											<a href="#"> BMW X1 xDrive aut.</a>
+                                            <p>
+                                               Volvo XC40 aut., VW Tiguan 4x4 aut. ou similaire (SUV Premium | FFAR)
+                                            </p>
+											<span class="price"><i class="fa fa-tag"></i> 120/jour</span>
+										</h3>
+
+										<h5>HATCHBACK</h5>
+
+										<div class="p-car-feature">
+											<a href="#">2018</a>
+											<a href="#">Transmission automatique/a>
+											<a href="#">Climatisation</a>
+                                            <a href="#">5 portes</a>
+                                            <a href="#">5 places</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Single Popular Car End -->
+						</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+    </section>
+    <!--== Gallery Page Content End ==-->
+{% endblock %}
