@@ -5,7 +5,7 @@
   .btnenreg{
 	  background-color: #ffd000;
   }
-  
+
 
 /*
 *
@@ -13,7 +13,7 @@
 *[Master Stylesheet]
 *
 * Project: Cardoor - Car Rental HTML Template
-* Version: 
+* Version:
 * Created : 13.02.2018
 * Author Name: alen dui
 * Author URI: http://alendkidjt.com
@@ -1571,8 +1571,8 @@ body,
 }
 
 #slideslow-bg div.book-ur-car,
-#slideslow-bg div.book-ur-car * {
-	height: auto;
+#slideslow-bg div.book-ur-car  {
+	height: 150px;
 }
 
 .service-right .col-lg-12:last-child .single-service,
@@ -1599,13 +1599,12 @@ body,
 /*== SlideShow CSS ==*/
 
 /*== Book Car CSS ==*/
-
 .book-ur-car {
 	background-color: rgba(0, 0, 0, 0.6);
 	border-radius: 4px;
 	margin: 70px auto auto;
 	overflow: hidden;
-	padding: 50px 20px;
+	padding: 50px 15px;
 	width: 90%;
 }
 
@@ -1614,7 +1613,8 @@ body,
 	display: block;
 	float: left;
 	margin-right: 1%;
-	width: 19.2%;
+	width: 19%;
+	height: 50px;
 	-webkit-transition: 0.4s;
 	transition: 0.4s;
 }
@@ -1647,9 +1647,14 @@ body,
 
 .bookcar-btn button {
 	padding: 7px;
+	height: 50px;
 	cursor: pointer;
 	-webkit-transition: 0.4s;
 	transition: 0.4s;
+}
+
+.car-choose {
+	height: 50px;
 }
 
 .bookcar-btn:hover {
@@ -3247,4 +3252,3 @@ body,
 	opacity: 1;
 	visibility: visible;
 }
-  
