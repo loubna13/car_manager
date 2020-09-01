@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Car;
+use App\Form\CarType;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
