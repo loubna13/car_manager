@@ -18,7 +18,7 @@
     <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <!--=== Slicknav CSS ===-->
       <!--=== Vegas Min CSS ===-->
-    <link href="{{ asset('css/plugins/vegas.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/plugins/vegas1.min.css')}}" rel="stylesheet">
     <link href="{{ asset('css/plugins/slicknav.min.css')}}" rel="stylesheet">
     <!--=== Magnific Popup CSS ===-->
     <link href="{{ asset('css/plugins/magnific-popup.css')}}" rel="stylesheet">
@@ -31,7 +31,7 @@
     <!--=== Theme Reset CSS ===-->
     <link href="{{asset('css/reset.css')}}" rel="stylesheet">
     <!--=== Main Style CSS ===-->
-    <link href="{{ asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/style1.css')}}" rel="stylesheet">
     <!--=== Responsive CSS ===-->
     <link href="{{ asset('css/responsive.css')}}" rel="stylesheet">
 
@@ -114,13 +114,19 @@
                                                     <a href="{{ path('home')}}">Accueil</a>
                                                 </li>
                                                 <li>
-                                                    <a class="nav-link" href="{{ path('services')}}">Nos services</a>
+                                                    <a class="nav-link" href="{{ path('services')}}">Services</a>
                                                 </li>
                                                 <li>
-                                                    <a class="nav-link" href="{{ path('car_index')}}">Nos Véhicule</a>
+                                                    <a class="nav-link" href="{{ path('car_index')}}">Véhicules</a>
                                                 </li>
                                                 <li>
-                                                    <a class="nav-link" href="#">A propos</a>
+                                                    <a class="nav-link" href="{{ path('booking_index')}}">Réservations</a>
+                                                </li>
+                                                 <li>
+                                                    <a class="nav-link" href="{{ path('blog')}}">Blog</a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link" href="{{ path('aboutus')}}">A propos</a>
                                                 </li>
                                                 <li>
                                                     <a class="nav-link" href="#">Contact</a>
@@ -171,7 +177,7 @@
                                 <div class="single-footer-widget">
                                     <h2>A propos</h2>
                                     <div class="widget-body">
-                                        <img src="{{ asset('images/logo.png')}}" alt="JSOFT">
+                                        <img src="{{ asset('images/logo4.png')}}" alt="JSOFT">
                                         <p>Lorem ipsum dolored is a sit ameted consectetur adipisicing elit. Nobis magni assumenda distinctio debitis, eum fuga fugiat error reiciendis.</p>
 
                                         <div class="newsletter-area">
@@ -189,7 +195,7 @@
                             <!-- Single Footer Widget Start -->
                             <div class="col-lg-4 col-md-6">
                                 <div class="single-footer-widget">
-                                    <h2>Recent Posts</h2>
+                                    <h2>Articles Recents</h2>
                                     <div class="widget-body">
                                         <ul class="recent-post">
                                             <li>
@@ -296,7 +302,7 @@
             <script src="{{ asset('js/plugins/slicknav.min.js')}}"></script>
 
             <!--=== Main Js ===-->
-            <script src="{{ asset('js/main.js')}}"></script>
+            <script src="{{ asset('js/main1.js')}}"></script>
             {% endblock %}
 
 </body>

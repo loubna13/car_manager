@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Booking;
+use App\Entity\Car;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -19,6 +20,7 @@ class BookingType extends AbstractType
             'choices' => [
                 'Bordeaux' => 'Bordeaux',
                 'Paris' => 'Paris',
+                'Lyon'  => 'Lyon'
             ],
             'attr' => [
                 'class' => 'custom-select car-choose'

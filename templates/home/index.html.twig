@@ -12,27 +12,31 @@
                     <div class="slideshowcontent">
                         <div class="display-table">
                             <div class="display-table-cell">
-                                <h1>Louer une voiture aujourd'hui!</h1>
-                                <p>FOR AS LOW AS $10 A DAY PLUS 15% DISCOUNT <br> FOR OUR RETURNING CUSTOMERS</p>
+                                <h1>Trouvons ensemble la voiture idéale..</h1>
+                                <p>Choisir une de nos voiture et bénificier de 15% DISCOUNT <br> OFFRE RESERVEE AU CLIENTELE</p>
 
                                 <div class="book-ur-car">
                                    {{ form_start(form) }}
                                         <div class="car-choose bookinput-item">
-                                            {{ form_widget(form.pickLocation) }}
+                                          <label>Depart de : </label>
+                                            {{ form_widget(form.pickLocation, { 'attr' :{'placeholder':'lieu de départ'}}) }}
                                         </div>
 
                                         <div class="pick-date bookinput-item">
-                                            {{ form_widget(form.pickDate) }}
+                                           <label>Début de location </label>
+                                            {{ form_widget(form.pickDate, { 'attr' :{'placeholder':''}}) }}
                                         </div>
 
                                         <div class="retern-date bookinput-item">
-                                            {{ form_widget(form.returnDate) }}
+                                           <label>Fin de location </label>
+                                            {{ form_widget(form.returnDate, { 'attr' :{'placeholder':''}}) }}
                                         </div>
 
                                         <div class="car-choose bookinput-item">
-                                            {{ form_widget(form.pickCar) }}
+                                            <label>Marque de voiture</label>
+                                            {{ form_widget(form.pickCar, { 'attr' :{'placeholder':'marque de voiture'}}) }}
                                         </div>
-                                 
+                                        <br>
                                         <div class="bookcar-btn bookinput-item">
                                             <button type="submit">RESERVATION</button>
                                         </div>
@@ -46,95 +50,8 @@
         </div>
     </section>
     <!--== SlideshowBg Area End ==-->
-
-    <!--== About Us Area Start ==-->
-    <section id="about-area" class="section-padding">
-        <div class="container">
-            <div class="row">
-                <!-- Section Title Start -->
-                <div class="col-lg-12">
-                    <div class="section-title  text-center">
-                        <h2>A propos de nous</h2>
-                        <span class="title-line"><i class="fa fa-car"></i></span>
-                        <p>
-                           Une expérience inoubliable avec RENT CAR
-                        </p>
-                    </div>
-                </div>
-                <!-- Section Title End -->
-            </div>
-
-            <div class="row">
-                <!-- About Content Start -->
-                <div class="col-lg-6">
-                    <div class="display-table">
-                        <div class="display-table-cell">
-                            <div class="about-content">
-                                <p>
-                                   Depuis 2009, CAR RENT révolutionne l’industrie du voyage. Un moteur de recherche dédié au location de     tout type de véhicule.
-                                    Aujourd’hui, nous traitons plus de 40000 recherches annuelles sur nos plateformes et aidons des milliers de voyageurs dans le monde entier à être sûrs de leurs décisions. À chaque recherche, CAR RENT parcourt des dizaines d'annonces afin de présenter aux voyageurs les informations nécessaires pour trouver les locations de voitures qui leur conviennent
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- About Content End -->
-
-                <!-- About Video Start -->
-                <div class="col-lg-6">
-                    <div class="about-image">
-                        <img src="{{ asset('images/home-2-about.png')}}" alt="JSOFT">
-                    </div>
-                </div>
-                <!-- About Video End -->
-            </div>
-
-            <!-- About Fretutes Start -->
-            <div class="about-feature-area">
-                <div class="row">
-                    <!-- Single Fretutes Start -->
-                    <div class="col-lg-4">
-                        <div class="about-feature-item active">
-                            <i class="fa fa-car"></i>
-                            <h3>Notre gamme de véhicule</h3>
-                            <p>
-                                Des petites citadines aux supercars, vous trouverez assurément le modèle qui vous convient dans notre vaste gamme de véhicules. Que vous soyez à la recherche d’une voiture élégante et compacte ou d’une berline haut de gamme, la qualité est toujours au rendez-vous.
-                            
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Single Fretutes End -->
-
-                    <!-- Single Fretutes Start -->
-                    <div class="col-lg-4">
-                        <div class="about-feature-item">
-                            <i class="fa fa-car"></i>
-                            <h3>Personnaliser votre voyage</h3>
-                            <p>                            
-                                Faites de votre voyage une expérience inoubliable avec nos options supplémentaires. Gardez le contact où que vous soyez avec le Wi-Fi mobile et laissez-vous guider avec le GPS haut de gamme.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Single Fretutes End -->
-
-                    <!-- Single Fretutes Start -->
-                    <div class="col-lg-4">
-                        <div class="about-feature-item">
-                            <i class="fa fa-car"></i>
-                            <h3>La location de véhicule avec RENT CAR</h3>
-                            <p>                            
-                            Avec RENT CAR, vous êtes sûr de toujours arriver à bon port, confortablement installé dans un véhicule parmi les plus récents et avec l’assurance d’un service excellent. Présents dans 165 pays, nous sommes là pour faciliter votre voyage, vous permettant ainsi de mieux profiter de votre prochaine destination.</p>
-                        </div>
-                    </div>
-                    <!-- Single Fretutes End -->
-                </div>
-            </div>
-            <!-- About Fretutes End -->
-        </div>
-    </section>
-    <!--== About Us Area End ==-->
-
+    <br>
+    <br>
     <!--== Fun Fact Area Start ==-->
     <section id="funfact-area" class="overlay section-padding">
         <div class="container">
@@ -256,7 +173,7 @@
                         <ul class="package-list">
                             <li>LIVRAISON VEHICULE A L'AIROPORT</li>
                             <li>MARIAGES</li>
-                            <li>ASSURRANCE/li>
+                            <li>ASSURRANCE</li>
                             <li>TRANSPORT A L'ETRANGER</li>
                             <li>CHAUFFEEUR INCLUS</li>
                         </ul>
@@ -283,7 +200,7 @@
                 </div>
                 <!-- Section Title End -->
             </div>
-
+   
             <div class="row">
                 <div class="col-lg-12">
                     <div class="team-content">
@@ -297,7 +214,7 @@
                                                 <div class="team-mem-icon">
                                                     <img src="{{ asset('images/team/team-mem-thumb-1.png')}}" alt="JSOFT">
                                                 </div>
-                                                <h5>Loubna Barkat</h5>
+                                                <h5>Tina mamy</h5>
                                             </a>
                                         </li>
                                         <li class="nav-item">
@@ -305,7 +222,7 @@
                                                 <div class="team-mem-icon">
                                                     <img src="{{ asset('images/team/team-mem-thumb-3.png')}}" alt="JSOFT">
                                                 </div>
-                                                <h5>Akrem Kelloumi</h5>
+                                                <h5>Loubna binou</h5>
                                             </a>
                                         </li>
                                         <li class="nav-item">
@@ -313,7 +230,15 @@
                                                 <div class="team-mem-icon">
                                                     <img src="{{ asset('images/team/team-mem-thumb-2.png')}}" alt="JSOFT">
                                                 </div>
-                                                <h5>Ikhlass Loussi</h5>
+                                                <h5>Loussa loussi</h5>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="tab_item_4" data-toggle="tab" href="#team_member_4" role="tab" aria-selected="true">
+                                                <div class="team-mem-icon">
+                                                    <img src="{{ asset('images/team/team-mem-thumb-4.png')}}" alt="JSOFT">
+                                                </div>
+                                                <h5>kelloumi</h5>
                                             </a>
                                         </li>
                                     </ul>
@@ -334,10 +259,10 @@
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="team-member-info text-center">
-                                                    <h4>Loubna Barkat</h4>
-                                                    <h5>Developeuse Web</h5>
+                                                    <h4>Tina mamy</h4>
+                                                    <h5>Developer</h5>
                                                     <span class="quote-icon"><i class="fa fa-quote-left"></i></span>
-                                                    <p>Rigoureuse et méthodique, je souhaite devenir développeuse web Full Stack. Pour y parvenir, j’ai suivi une formation de développeuse web avec WebFroce3 et Social Builde.</p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin fermentum dolor. Nunc nec augue urna. Cras varius orci vitae lacinia efficitur.</p>
                                                     <div class="team-social-icon">
                                                         <a href="#"><i class="fa fa-facebook"></i></a>
                                                         <a href="#"><i class="fa fa-twitter"></i></a>
@@ -361,11 +286,10 @@
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="team-member-info text-center">
-                                                    <h4>Akrem Kelloumi</h4>
+                                                    <h4>loubna binou</h4>
                                                     <h5>Designer</h5>
                                                     <span class="quote-icon"><i class="fa fa-quote-left"></i></span>
-                                                    <p>A l'écoute et organisée, je souhaite devenir développeuse web Back-End dans une start-up. Pour y parvenir, j’ai suivi une formation de développeuse web avec WebFroce3 et Social Builder.</p>
-
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin fermentum dolor. Nunc nec augue urna. Cras varius orci vitae lacinia efficitur.</p>
                                                     <div class="team-social-icon">
                                                         <a href="#"><i class="fa fa-facebook"></i></a>
                                                         <a href="#"><i class="fa fa-twitter"></i></a>
@@ -384,16 +308,42 @@
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="team-member-pro-pic">
-                                                    <img src="{{ asset('images/team/team-mem-2.png')}}" alt="JSOFT">
+                                                    <img src="assets/img/team/team-mem-2.png" alt="JSOFT">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="team-member-info text-center">
-                                                    <h4>Iklass Loussi</h4>
+                                                    <h4>loussa loussi</h4>
                                                     <h5>Marketer</h5>
                                                     <span class="quote-icon"><i class="fa fa-quote-left"></i></span>
-                                                    <p>Réactive et autonome, je souhaite devenir développeuse web Full Stack. Pour y parvenir, j’ai suivi une formation de développeuse web avec WebFroce3 et Social Builder.</p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin fermentum dolor. Nunc nec augue urna. Cras varius orci vitae lacinia efficitur.</p>
+                                                    <div class="team-social-icon">
+                                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                                                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Single Team  End -->
 
+                                    <!-- Single Team  start -->
+                                    <div class="tab-pane fade" id="team_member_4" role="tabpanel" aria-labelledby="tab_item_4">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="team-member-pro-pic">
+                                                    <img src="{{ asset('images/team/team-mem-4.png')}}" alt="JSOFT">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="team-member-info text-center">
+                                                    <h4>Akrem keloumi</h4>
+                                                    <h5>Manager</h5>
+                                                    <span class="quote-icon"><i class="fa fa-quote-left"></i></span>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin fermentum dolor. Nunc nec augue urna. Cras varius orci vitae lacinia efficitur.</p>
                                                     <div class="team-social-icon">
                                                         <a href="#"><i class="fa fa-facebook"></i></a>
                                                         <a href="#"><i class="fa fa-twitter"></i></a>
@@ -416,142 +366,5 @@
         </div>
     </section>
     <!--== Team Area End ==-->
-
-      <!--== Articles Area Start ==-->
-    <section id="tips-article-area" class="section-padding">
-        <div class="container">
-            <div class="row">
-                <!-- Section Title Start -->
-                <div class="col-lg-12">
-                    <div class="section-title  text-center">
-                        <h2>Tips and articles</h2>
-                        <span class="title-line"><i class="fa fa-car"></i></span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-                <!-- Section Title End -->
-            </div>
-
-            <!-- Articles Content Wrap Start -->
-            <div class="row">
-                <!-- Single Articles Start -->
-                <div class="col-lg-12">
-                    <article class="single-article">
-                        <div class="row">
-                            <!-- Articles Thumbnail Start -->
-                            <div class="col-lg-5">
-                                <div class="article-thumb">
-                                    <img src="{{ asset('images/article/arti-thumb-1.jpg')}}" alt="JSOFT">
-                                </div>
-                            </div>
-                            <!-- Articles Thumbnail End -->
-
-                            <!-- Articles Content Start -->
-                            <div class="col-lg-7">
-                                <div class="display-table">
-                                    <div class="display-table-cell">
-                                        <div class="article-body">
-                                            <h3><a href="article-details.html">Wliquam sit amet urna eullam</a></h3>
-                                            <div class="article-meta">
-                                                <a href="#" class="author">By :: <span>Admin</span></a>
-                                                <a href="#" class="commnet">Comments :: <span>10</span></a>
-                                            </div>
-
-                                            <div class="article-date">25 <span class="month">jan</span></div>
-
-                                            <p>Wlam aiber vestibulum fringilla oremedad ipsum dolor sit amet consectetur adipisicing elit sed doned eiusmod tempored incididunt ut labore et dolore magna aliquaa enimd ad minim veniad.</p>
-
-                                            <a href="article-details.html" class="readmore-btn">Read More <i class="fa fa-long-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Articles Content End -->
-                        </div>
-                    </article>
-                </div>
-                <!-- Single Articles End -->
-
-                <!-- Single Articles Start -->
-                <div class="col-lg-12">
-                    <article class="single-article middle">
-                        <div class="row">
-
-                            <!-- Articles Content Start -->
-                            <div class="col-lg-7">
-                                <div class="display-table">
-                                    <div class="display-table-cell">
-                                        <div class="article-body">
-                                            <h3><a href="article-details.html">fringilla oremedad ipsum dolor sit</a></h3>
-                                            <div class="article-meta">
-                                                <a href="#" class="author">By :: <span>Admin</span></a>
-                                                <a href="#" class="commnet">Comments :: <span>10</span></a>
-                                            </div>
-
-                                            <div class="article-date">14<span class="month">feb</span></div>
-
-                                            <p>Wlam aiber vestibulum fringilla oremedad ipsum dolor sit amet consectetur adipisicing elit sed doned eiusmod tempored incididunt ut labore et dolore magna aliquaa enimd ad minim veniad.</p>
-
-                                            <a href="article-details.html" class="readmore-btn">Read More <i class="fa fa-long-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Articles Content End -->
-
-                            <!-- Articles Thumbnail Start -->
-                            <div class="col-lg-5 d-xl-none">
-                                <div class="article-thumb">
-                                    <img src="{{ asset('images/article/arti-thumb-2.jpg')}}" alt="JSOFT">
-                                </div>
-                            </div>
-                            <!-- Articles Thumbnail End -->
-                        </div>
-                    </article>
-                </div>
-                <!-- Single Articles End -->
-
-                <!-- Single Articles Start -->
-                <div class="col-lg-12">
-                    <article class="single-article">
-                        <div class="row">
-                            <!-- Articles Thumbnail Start -->
-                            <div class="col-lg-5">
-                                <div class="article-thumb">
-                                    <img src="{{ asset('images/article/arti-thumb-3.jpg')}}" alt="JSOFT">
-                                </div>
-                            </div>
-                            <!-- Articles Thumbnail End -->
-
-                            <!-- Articles Content Start -->
-                            <div class="col-lg-7">
-                                <div class="display-table">
-                                    <div class="display-table-cell">
-                                        <div class="article-body">
-                                            <h3><a href="article-details.html">Tempored incididunt ut labore</a></h3>
-                                            <div class="article-meta">
-                                                <a href="#" class="author">By :: <span>Admin</span></a>
-                                                <a href="#" class="commnet">Comments :: <span>10</span></a>
-                                            </div>
-
-                                            <div class="article-date">17 <span class="month">feb</span></div>
-
-                                            <p>Wlam aiber vestibulum fringilla oremedad ipsum dolor sit amet consectetur adipisicing elit sed doned eiusmod tempored incididunt ut labore et dolore magna aliquaa enimd ad minim veniad.</p>
-
-                                            <a href="article-details.html" class="readmore-btn">Read More <i class="fa fa-long-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Articles Content End -->
-                        </div>
-                    </article>
-                </div>
-                <!-- Single Articles End -->
-            </div>
-            <!-- Articles Content Wrap End -->
-        </div>
-    </section>
-    <!--== Articles Area End ==-->
 {% endblock %}
 

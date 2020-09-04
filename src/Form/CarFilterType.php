@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -26,8 +27,9 @@ class CarFilterType extends AbstractType
         ->add('price', IntegerType::class, [
             'required' => false
         ])
-        ->add('image', TextType::class, [
-            'required' => false
+        ->add('image', FileType::class, [
+            'label'=>'photo voiture',
+            'required' => true
         ])
         ->add('isNew', ChoiceType::class, [
             'choices' => [

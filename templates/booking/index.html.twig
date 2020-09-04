@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Booking index{% endblock %}
+{% block title %}Liste des Réservations{% endblock %}
 
 {% block body %}
     <h1>Liste des Réservations</h1>
@@ -9,7 +9,7 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Départ de :</th>
+                <th>Départ de : </th>
                 <th>Début de location</th>
                 <th>Fin de location</th>
                 <th>Model</th>
@@ -37,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('booking_new') }}">Create new</a>
+    <a href="{{ path('booking_new') }}">Crée une Nouvelle réservation</a>
 {% endblock %}

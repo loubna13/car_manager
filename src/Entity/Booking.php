@@ -37,6 +37,18 @@ class Booking
      */
     private $pickCar;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Car::class, inversedBy="bookings")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $car;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="booking")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -89,4 +101,33 @@ class Booking
 
         return $this;
     }
+
+    public function getCar(): ?Car
+    {
+        return $this->car;
+    }
+
+    public function setCar(?Car $car): self
+    {
+        $this->car = $car;
+
+        return $this;
+    }
+    public function __toString()
+    {
+        return $this->pickCar;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
 }

@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Car;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 
@@ -16,8 +17,13 @@ class CarType extends AbstractType
             ->add('brand')
             ->add('year')
             ->add('price')
+            ->add('image')
             ->add('imageFile',VichImageType::class)
-            ->add('isNew')
+            ->add('isNew' ,ChoiceType::class, [
+                'choices' => [
+                    'New' => 'New',
+                    'Used' => 'Used'],
+            ])
         ;
     }
 

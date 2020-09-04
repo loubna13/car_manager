@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -49,6 +51,16 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $phone;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Booking::class, mappedBy="user")
+     */
+    private $booking;
+
+    public function __construct()
+    {
+        $this->booking = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -166,6 +178,37 @@ class User implements UserInterface
       public function __toString(): ?string
       {
           return $this->email;
+      }
+
+      /**
+       * @return Collection|Booking[]
+       */
+      public function getBooking(): Collection
+      {
+          return $this->booking;
+      }
+
+      public function addBooking(Booking $booking): self
+      {
+          if (!$this->booking->contains($booking)) {
+              $this->booking[] = $booking;
+              $booking->setUser($this);
+          }
+
+          return $this;
+      }
+
+      public function removeBooking(Booking $booking): self
+      {
+          if ($this->booking->contains($booking)) {
+              $this->booking->removeElement($booking);
+              // set the owning side to null (unless already changed)
+              if ($booking->getUser() === $this) {
+                  $booking->setUser(null);
+              }
+          }
+
+          return $this;
       }
 
 
