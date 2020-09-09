@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use App\Repository\UserRepository;
+use App\Repository\MemberRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -10,10 +10,10 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @ORM\Entity(repositoryClass=MemberRepository::class)
  * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
-class User implements UserInterface
+class Member implements UserInterface
 {
     /**
      * @ORM\Id
@@ -145,23 +145,23 @@ class User implements UserInterface
       {
           return $this->name;
       }
-  
+
       public function setName(string $name): self
       {
           $this->name = $name;
-  
+
           return $this;
       }
-  
+
       public function getFirstname(): ?string
       {
           return $this->firstname;
       }
-  
+
       public function setFirstname(string $firstname): self
       {
           $this->firstname = $firstname;
-  
+
           return $this;
       }
       public function getPhone(): ?string
@@ -171,10 +171,10 @@ class User implements UserInterface
       public function setPhone(string $phone): self
       {
           $this->phone = $phone;
-  
+
           return $this;
       }
-  
+
       public function __toString(): ?string
       {
           return $this->email;

@@ -45,12 +45,12 @@ class BookingController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-             
+
 
             # TODO : Vérification de disponibilité du car
             # Le plus simple, vérifier s'il n'existe pas déjà une reservation a cette date.
 
-
+            $booking->setMember($this->getUser());
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($booking);

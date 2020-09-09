@@ -3,7 +3,7 @@ security:
         ROLE_ADMIN: [ROLE_ADMIN]
         ROLE_USER: [ROLE_USER]
     encoders:
-        App\Entity\User:
+        App\Entity\Member:
             algorithm: auto
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
@@ -11,7 +11,7 @@ security:
         # used to reload user from session & other features (e.g. switch_user)
         app_user_provider:
             entity:
-                class: App\Entity\User
+                class: App\Entity\Member
                 property: email
     firewalls:
         dev:

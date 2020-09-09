@@ -29,7 +29,7 @@ class Booking
 
     /**
      * @ORM\Column(type="datetime")
-   
+
      */
     private $returnDate;
 
@@ -40,10 +40,10 @@ class Booking
     private $car;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="booking")
+     * @ORM\ManyToOne(targetEntity=Member::class, inversedBy="booking")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $user;
+    private $member;
 
     public function getId(): ?int
     {
@@ -97,14 +97,14 @@ class Booking
 
         return $this;
     }
-    public function getUser(): ?User
+    public function getMember(): ?Member
     {
-        return $this->user;
+        return $this->member;
     }
 
-    public function setUser(?User $user): self
+    public function setMember(?Member $member): self
     {
-        $this->user = $user;
+        $this->member = $member;
 
         return $this;
     }

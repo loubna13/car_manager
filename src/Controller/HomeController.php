@@ -12,7 +12,7 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    
+
     public function index(Request $request)
     {
         $booking = new Booking();
@@ -21,10 +21,10 @@ class HomeController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $booking->setUser($this->getUser());
+            $booking->setMember($this->getMember());
             $entityManager->persist($booking);
             $entityManager->flush();
-    
+
             // $this->addFlash(
             //     'success',
             //     "Votre réservation  a été prise en compte avec succès!"
@@ -34,11 +34,11 @@ class HomeController extends AbstractController
             return $this->redirectToRoute('car_index');
         }
 
-      
+
         return $this->render('home/index.html.twig', [
             'form' => $form->createView(),
         ]);
     }
-        
+
 }
 
