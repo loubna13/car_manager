@@ -34,11 +34,11 @@
 
                                         <div class="car-choose bookinput-item">
                                             <label>Marque de voiture</label>
-                                            {{ form_widget(form.pickCar, { 'attr' :{'placeholder':'marque de voiture'}}) }}
+                                            {{ form_widget(form.car, { 'attr' :{'placeholder':'marque de voiture'}}) }}
                                         </div>
                                         <br>
                                         <div class="bookcar-btn bookinput-item">
-                                            <button type="submit">RESERVATION</button>
+                                            <button type="submit"><a href="{{ path('car_index')}}"></a> Rechercher</button>
                                         </div>
                                    {{ form_end(form) }}
                                 </div>
@@ -212,7 +212,7 @@
                                         <li class="nav-item">
                                             <a class="nav-link active" id="tab_item_1" data-toggle="tab" href="#team_member_1" role="tab" aria-selected="true">
                                                 <div class="team-mem-icon">
-                                                    <img src="{{ asset('images/team/team-mem-thumb-1.png')}}" alt="JSOFT">
+                                                    <img src="{{ asset('images/loubna.jpg')}}" alt="JSOFT">
                                                 </div>
                                                 <h5>Tina mamy</h5>
                                             </a>
@@ -220,7 +220,7 @@
                                         <li class="nav-item">
                                             <a class="nav-link" id="tab_item_2" data-toggle="tab" href="#team_member_2" role="tab" aria-selected="true">
                                                 <div class="team-mem-icon">
-                                                    <img src="{{ asset('images/team/team-mem-thumb-3.png')}}" alt="JSOFT">
+                                                    <img src="{{ asset('images/loubna.jpg')}}" alt="JSOFT">
                                                 </div>
                                                 <h5>Loubna binou</h5>
                                             </a>
@@ -228,7 +228,7 @@
                                         <li class="nav-item">
                                             <a class="nav-link" id="tab_item_3" data-toggle="tab" href="#team_member_3" role="tab" aria-selected="true">
                                                 <div class="team-mem-icon">
-                                                    <img src="{{ asset('images/team/team-mem-thumb-2.png')}}" alt="JSOFT">
+                                                    <img src="{{ asset('images/team/team-mem-2.png')}}" alt="JSOFT">
                                                 </div>
                                                 <h5>Loussa loussi</h5>
                                             </a>
@@ -236,7 +236,7 @@
                                         <li class="nav-item">
                                             <a class="nav-link" id="tab_item_4" data-toggle="tab" href="#team_member_4" role="tab" aria-selected="true">
                                                 <div class="team-mem-icon">
-                                                    <img src="{{ asset('images/team/team-mem-thumb-4.png')}}" alt="JSOFT">
+                                                    <img src="{{ asset('images/team/team-mem-4.png')}}" alt="JSOFT">
                                                 </div>
                                                 <h5>kelloumi</h5>
                                             </a>
@@ -254,7 +254,7 @@
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="team-member-pro-pic">
-                                                    <img src="{{ asset('images/team/team-mem-1.png')}}" alt="JSOFT">
+                                                    <img src="{{ asset('images/loubna.jpg')}}" alt="JSOFT">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
@@ -281,7 +281,7 @@
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="team-member-pro-pic">
-                                                    <img src="{{ asset('images/team/team-mem-3.png')}}" alt="JSOFT">
+                                                    <img src="{{ asset('images/loubna.jpg')}}" alt="JSOFT">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
@@ -308,7 +308,7 @@
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="team-member-pro-pic">
-                                                    <img src="assets/img/team/team-mem-2.png" alt="JSOFT">
+                                                    <img src="{{ asset('images/team/team-mem-2.png')}}" alt="JSOFT">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">

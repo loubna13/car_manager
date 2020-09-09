@@ -33,7 +33,7 @@ class BookingType extends AbstractType
         ->add('returnDate', DateType::class, [
             'widget' => 'single_text',
         ])
-        ->add('pickCar', EntityType::class, [
+        ->add('car', EntityType::class, [
             'class' => Car::class,
             'choice_label' =>'brand',
             'attr' => [

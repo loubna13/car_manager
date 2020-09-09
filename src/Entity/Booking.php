@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Entity;
-
 use App\Repository\BookingRepository;
 use Doctrine\ORM\Mapping as ORM;
+
 
 /**
  * @ORM\Entity(repositoryClass=BookingRepository::class)
@@ -29,13 +29,9 @@ class Booking
 
     /**
      * @ORM\Column(type="datetime")
+   
      */
     private $returnDate;
-
-    /**
-     * @ORM\Column(type="string", length=200)
-     */
-    private $pickCar;
 
     /**
      * @ORM\ManyToOne(targetEntity=Car::class, inversedBy="bookings")
@@ -90,18 +86,6 @@ class Booking
         return $this;
     }
 
-    public function getPickCar(): ?string
-    {
-        return $this->pickCar;
-    }
-
-    public function setPickCar(string $pickCar): self
-    {
-        $this->pickCar = $pickCar;
-
-        return $this;
-    }
-
     public function getCar(): ?Car
     {
         return $this->car;
@@ -113,11 +97,6 @@ class Booking
 
         return $this;
     }
-    public function __toString()
-    {
-        return $this->pickCar;
-    }
-
     public function getUser(): ?User
     {
         return $this->user;

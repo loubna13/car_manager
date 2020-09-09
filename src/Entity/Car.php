@@ -54,7 +54,7 @@ class Car
     private $isNew;
 
     /**
-     * @ORM\OneToMany(targetEntity=Booking::class, mappedBy="car")
+     * @ORM\OneToMany(targetEntity=Booking::class, mappedBy="car",orphanRemoval=true)
      */
     private $bookings;
 
@@ -62,6 +62,11 @@ class Car
      * @ORM\ManyToOne(targetEntity=Model::class, inversedBy="cars")
      */
     private $model;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $seats;
 
     public function __construct()
     {
@@ -187,5 +192,17 @@ class Car
     }
     public function __toString(){
         return $this->brand;
+    }
+
+    public function getSeats(): ?int
+    {
+        return $this->seats;
+    }
+
+    public function setSeats(int $seats): self
+    {
+        $this->seats = $seats;
+
+        return $this;
     }
 }

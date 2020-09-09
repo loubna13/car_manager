@@ -58,33 +58,33 @@ class AppFixtures extends Fixture
 
         }
 
-            $model1 = new Model();
-            $model1->setLabel("volkswagon");
-            $manager->persist($model1);
+            // $model1 = new Model();
+            // $model1->setLabel("volkswagon");
+            // $manager->persist($model1);
 
-            $model2 = new Model();
-            $model2->setLabel("Ford");
-            $manager->persist($model2); 
+            // $model2 = new Model();
+            // $model2->setLabel("Ford");
+            // $manager->persist($model2); 
 
-            //generer des voitures pour chaque modele
-            $models = [$model1,$model2];
-            foreach($models as $m){
-                $rand = rand(3,5);
+            // //generer des voitures pour chaque modele
+            // $models = [$model1,$model2];
+            // foreach($models as $m){
+            //     $rand = rand(3,5);
 
 
-                for($i=1; $i <= $rand; $i++){
-                    $car = new Car();
-                    $car->setBrand($m);
-                    $car->setYear($this->faker->numberBetween($min=1999, $max=2019));
-                    $car->setImage($this->faker->imageUrl($width = 640, $height = 480));
+            //     for($i=1; $i <= $rand; $i++){
+            //         $car = new Car();
+            //         $car->setBrand();
+            //         $car->setYear($this->faker->numberBetween($min=1999, $max=2019));
+            //         $car->setImage($this->faker->imageUrl($width = 640, $height = 480));
                
-                    $car->setPrice($this->faker->numberBetween($min = 500, $max = 20000));
-                    $car->setIsNew($this->faker->boolean($chanceOfGettingTrue = 50));
-                    $manager->persist($car);
+            //         $car->setPrice($this->faker->numberBetween($min = 500, $max = 20000));
+            //         $car->setIsNew($this->faker->boolean($chanceOfGettingTrue = 50));
+            //         $manager->persist($car);
          
-                 }
+            //      }
 
-            }
+            // }
 
 
 

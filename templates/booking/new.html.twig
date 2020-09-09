@@ -1,11 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Nouvelle réservation{% endblock %}
+{% block title %}Nouvelle réservation RENT CAR{% endblock %}
 
 {% block body %}
     <h1>Crée une nouvelle réservation</h1>
-
-    {{ include('booking/_form.html.twig') }}
-
-    <a href="{{ path('booking_index') }}">Revenir à la liste</a>
+    <div id="page-content" class="archives-page">
+		<div class="container">
+			<div class="row">
+                <div id="main-content" class="col-md-12">
+					<article class="contact">
+						<div class="art-content">
+                            <h1 class="text-center">Réservation</h1>
+                            <h3>Votre voiture</h3>
+                                <div class="container">
+                                    <img src="{{ asset('uploads/images/cars/') }}{{ booking.car.image }}" class="img-thumbnail photo-res">
+                                        <ul>
+                                            <li><strong>Modle:<br>
+                                            </strong>{{ booking.car.brand }}</li>
+                                            <li><strong>Année :<br>
+                                            </strong>{{ booking.car.year }}</li>
+                                            <li><strong>Nombre de places :<br>
+                                            </strong>{{ booking.car.seats }}</li>
+                                        </ul>
+                                </div>
+                            <h3>Tarif</h3>
+                                <p>{{ booking.car.price }} &euro;</p>
+                                {{ include('booking/_form.html.twig') }}
+                               <a href="{{ path('car_index') }}">Revenir à la liste</a>
+                                  
+                                {# <a href="{{ path('booking_calendar') }}">Voir le calendrier</a>#}
+						</div>
+					</article>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

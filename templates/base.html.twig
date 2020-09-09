@@ -129,12 +129,12 @@
                                                     <a class="nav-link" href="{{ path('aboutus')}}">A propos</a>
                                                 </li>
                                                 <li>
-                                                    <a class="nav-link" href="#">Contact</a>
+                                                    <a class="nav-link" href="{{ path('contact_contact')}}">Contact</a>
                                                 </li>
                                                 
                                                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
 					
-                                                  <p><em> Bonjour {{ app.user.Name }}</em> <a href="{{ path('app_logout')}}" class="deconnexion">Deconnexion</a></p>
+                                                  <li><em> BONJOUR {{ app.user.Name }} !</em> <a href="{{ path('app_logout')}}" class="deconnexion"> Deconnexion</a></li>
                                                     
                                                 {% else %}
                                                     <li><a href="{{path('app_register')}}">S'inscrire !</a></li>
@@ -144,7 +144,7 @@
                                         
                                                 {% if is_granted('ROLE_ADMIN') %}
                                                     <li>
-                                                        <button type="button" class="btn btn-dark">
+                                                        <button type="button" class="btn btn-dark float-right">
                                                                     <a href="{{path('easyadmin')}}" target="_blank">Espace admin</a>
                                                         </button> 
                                                             
@@ -161,6 +161,7 @@
                     <!--== Header Bottom End ==-->
                 </header>
                 <!--== Header Area End ==-->
+            
         {% endblock %}
 
         {% block body %}{% endblock %}
@@ -236,7 +237,7 @@
                                         <p>Lorem ipsum doloer sited amet, consectetur adipisicing elit. nibh auguea, scelerisque sed</p>
 
                                         <ul class="get-touch">
-                                            <li><i class="fa fa-map-marker"></i> 75014, paris ,France</li>
+                                            <li><i class="fa fa-map-marker"></i> 75017, paris ,France</li>
                                             <li><i class="fa fa-mobile"></i> +33 6.61.05.64.94</li>
                                             <li><i class="fa fa-envelope"></i> loubnabarkat@outlook.com</li>
                                         </ul>
