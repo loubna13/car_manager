@@ -29,13 +29,13 @@ class BookingController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="booking_new", methods={"GET","POST"}, defaults={"id"="1"})
+     * @Route("/new/{car}", name="booking_new", methods={"GET","POST"})
      * @IsGranted("IS_AUTHENTICATED_FULLY")
      * @param Car $car
      * @param Request $request
      * @return Response
      */
-    public function new(Request $request, Car $car = null): Response
+    public function new(Request $request, Car $car): Response
     {
         $booking = new Booking();
         $booking->setCar($car);//lier l'entité car a l'entité booking pour que je puisse récupérer la var car dans le form de booking new

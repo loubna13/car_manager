@@ -24,32 +24,32 @@
         <div class="row">
             <h1>Nos voitures</h1>
         <br>
-            {% for car in cars %}        
+            {% for car in cars %}
                 <div class="col-12 col-lg-6 p-1">
                     <div class="card mb-3">
                         <div class="row no-gutters align-items-center p-2">
                             <div class="col-12 col-md-4">
-                                <img src="{{ asset('uploads/images/cars/')}}{{ car.image }}" class="card-img">                  
-                            </div> 
+                                <img src="{{ asset('uploads/images/cars/')}}{{ car.image }}" class="card-img">
+                            </div>
                             <div class="col">
                                 <div class="card-body">
                                     <h5 class="card-title">Modele : {{car.brand}}</h5>
                                     <p class="card-text">
-                                        <div>Marque : {{car.brand}}</div> 
+                                        <div>Marque : {{car.brand}}</div>
                                         <div>Année : {{car.year}}</div>
                                         <div>Nombre de places : {{car.seats}}</div>
                                         <div>Prix par jour : {{car.price}} &euro;</div>
                                     </p>
-                                    <button class="btn res"><a href="{{ path('booking_new', {'id': car.id})}}">Réserver</a></button>
+                                    <button class="btn res"><a href="{{ path('booking_new', {'car': car.id})}}">Réserver</a></button>
                                     <button class="btn voir"><a href="{{ path('blog_details', {'id': car.id}) }}">Voir les details</a></button>
 
                                 </div>
-                            </div>                  
-                        </div>                
+                            </div>
+                        </div>
                     </div>
                 </div>
             {% endfor %}
-        </div>                  
+        </div>
     </div>
 
     <a href="{{ path('car_new') }}">Ajouter une voiture</a>
