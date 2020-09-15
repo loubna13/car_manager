@@ -17,8 +17,15 @@ class CarType extends AbstractType
             ->add('brand')
             ->add('year')
             ->add('price')
+            ->add('image')
             ->add('imageFile',VichImageType::class)
             ->add('seats')
+            ->add('transmission' ,ChoiceType::class, [
+                'choices' => [
+                    'Automatique' => 'Automatique',
+                    'Manuelle' => 'Manuelle'],
+            ])
+        
             ->add('isNew' ,ChoiceType::class, [
                 'choices' => [
                     'New' => 'New',

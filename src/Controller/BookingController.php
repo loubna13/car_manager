@@ -4,7 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Booking;
 use App\Entity\Car;
+use App\Entity\Model;
 use App\Form\BookingType;
+use App\Form\CarSearchType;
 use App\Repository\BookingRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -29,21 +31,26 @@ class BookingController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="booking_new", methods={"GET","POST"}, defaults={"id"="1"})
+     * @Route("/new/{car}", name="booking_new", methods={"GET","POST"})
      * @IsGranted("IS_AUTHENTICATED_FULLY")
      * @param Car $car
      * @param Request $request
      * @return Response
      */
-    public function new(Request $request, Car $car = null): Response
+    public function new(Request $request, Car $car,CarRepository $carRepository): Response
     {
         $booking = new Booking();
         $booking->setCar($car);//lier l'entité car a l'entité booking pour que je puisse récupérer la var car dans le form de booking new
-
-
         $form = $this->createForm(BookingType::class, $booking);
         $form->handleRequest($request);
 
+        // car search treatement
+        $carSearch = new CarSearch();
+        $form = $this->createForm(CarSearchType:: class,$carSearch);
+        $form->handleRequest($request);
+
+
+       
         if ($form->isSubmitted() && $form->isValid()) {
              
 
@@ -51,7 +58,7 @@ class BookingController extends AbstractController
             # Le plus simple, vérifier s'il n'existe pas déjà une reservation a cette date.
 
 
-
+            $booking->setUser($this->getUser());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($booking);
             $entityManager->flush();

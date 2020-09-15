@@ -3,7 +3,7 @@
 {% block title %}Booking{% endblock %}
 
 {% block body %}
-    <h1>Booking</h1>
+    <h1>Réservation</h1>
 
     <table class="table">
         <tbody>
@@ -12,27 +12,27 @@
                 <td>{{ booking.id }}</td>
             </tr>
             <tr>
-                <th>PickLocation</th>
+                <th>Départ de :</th>
                 <td>{{ booking.pickLocation }}</td>
             </tr>
             <tr>
-                <th>PickDate</th>
+                <th>Debut de location</th>
                 <td>{{ booking.pickDate ? booking.pickDate|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>ReturnDate</th>
+                <th>Fin de location</th>
                 <td>{{ booking.returnDate ? booking.returnDate|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>Modele</th>
+                <th>Marque</th>
                 <td>{{ booking.car }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('booking_index') }}">back to list</a>
+    <a href="{{ path('booking_index') }}">Retour</a>
 
-    <a href="{{ path('booking_edit', {'id': booking.id}) }}">edit</a>
+    <a href="{{ path('booking_edit', {'id': booking.id}) }}">Modifier</a>
 
     {{ include('booking/_delete_form.html.twig') }}
 {% endblock %}

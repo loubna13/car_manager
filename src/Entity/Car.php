@@ -68,6 +68,11 @@ class Car
      */
     private $seats;
 
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $transmission;
+
     public function __construct()
     {
         $this->bookings = new ArrayCollection();
@@ -202,6 +207,18 @@ class Car
     public function setSeats(int $seats): self
     {
         $this->seats = $seats;
+
+        return $this;
+    }
+
+    public function getTransmission(): ?string
+    {
+        return $this->transmission;
+    }
+
+    public function setTransmission(string $transmission): self
+    {
+        $this->transmission = $transmission;
 
         return $this;
     }

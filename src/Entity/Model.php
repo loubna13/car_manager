@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Entity;
-use App\Entity\Car;
 use App\Repository\ModelRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;

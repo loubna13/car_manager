@@ -35,11 +35,9 @@
                                         <div class="car-choose bookinput-item">
                                             <label>Marque de voiture</label>
                                             {{ form_widget(form.car, { 'attr' :{'placeholder':'marque de voiture'}}) }}
+                                       
                                         </div>
-                                        <br>
-                                        <div class="bookcar-btn bookinput-item">
-                                            <button type="submit"><a href="{{ path('car_index')}}"></a> Rechercher</button>
-                                        </div>
+                                         <div><button type="submit" class="btn"><a href="{{ path('car_index')}}"></a> Rechercher</button></div>
                                    {{ form_end(form) }}
                                 </div>
                             </div>

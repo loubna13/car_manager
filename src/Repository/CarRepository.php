@@ -3,6 +3,8 @@
 namespace App\Repository;
 
 use App\Entity\Car;
+use App\Entity\CarSearch;
+use Doctrine\ORM\Query;
 use App\Form\CarType;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -20,42 +22,71 @@ class CarRepository extends ServiceEntityRepository
         parent::__construct($registry, Car::class);
     }
 
-    public function findFilter($form)
-    {
+    // public function findFilter($form)
+    // {
+    //     $qb = $this->createQueryBuilder('c');
+
+    //     if ($form['brand']) {
+    //         $qb->andWhere('c.brand = :brand')
+    //             ->setParameter('brand', $form['brand']);
+    //     }
+
+    //     if ($form['year']) {
+    //         $qb->andWhere('c.year = :year')
+    //             ->setParameter('year', $form['year']);
+    //     }
+
+    //     if ($form['price']) {
+    //         $qb->andWhere('c.price = :price')
+    //             ->setParameter('price', $form['price']);
+    //     }
+
+    //     if ($form['image']) {
+    //         $qb->andWhere('c.image= :image')
+    //             ->setParameter('image', $form['image']);
+    //     }
+
+    //     if ($form['isNew']) {
+    //         if ($form['isNew'] === 'yes') {
+    //             $qb->andWhere('c.isNew = true');
+    //         } else {
+    //             $qb->andWhere('c.isNew = false');
+    //         }
+    //     }
+
+    //     return $qb->orderBy('c.id', 'ASC')
+    //         ->getQuery()
+    //         ->getResult()
+    //     ;
+    // }
+
+    public function findAllWithPagination(CarSearch $carSearch) : Query{
+
         $qb = $this->createQueryBuilder('c');
 
-        if ($form['brand']) {
-            $qb->andWhere('c.brand = :brand')
-                ->setParameter('brand', $form['brand']);
-        }
-
-        if ($form['year']) {
-            $qb->andWhere('c.year = :year')
-                ->setParameter('year', $form['year']);
-        }
-
-        if ($form['price']) {
-            $qb->andWhere('c.price = :price')
-                ->setParameter('price', $form['price']);
-        }
-
-        if ($form['image']) {
-            $qb->andWhere('c.image= :image')
-                ->setParameter('image', $form['image']);
-        }
-
-        if ($form['isNew']) {
-            if ($form['isNew'] === 'yes') {
-                $qb->andWhere('c.isNew = true');
-            } else {
-                $qb->andWhere('c.isNew = false');
+        if ($carSearch->getPickLocation()) {
+            $qb = $qb->andWhere('c.pickLocation = :pickLocation')
+            ->setParameter('pickLocation', $carSearch->getPickLocation());
             }
-        }
 
-        return $qb->orderBy('c.id', 'ASC')
-            ->getQuery()
-            ->getResult()
-        ;
+        if ($carSearch->getPickDate()) {
+        
+            $qb->andWhere('c.pickDate >= '.date('Y-m-d H:i:s'));
+           
+        
+             }
+        if ($carSearch->getReturnDate()) {
+            $qb->andWhere('c.returnDate <= '.date('Y-m-d H:i:s'));
+        
+            }
+
+        if ($carSearch->getBrand()) {
+                $qb = $qb->andWhere('c.brand = :brand')
+                ->setParameter('brand', $carSearch->getBrand());
+                }
+
+        return $qb->getQuery();
+          
     }
 
     // /**
