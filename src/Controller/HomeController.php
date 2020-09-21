@@ -22,8 +22,8 @@ class HomeController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $booking->setUser($this->getUser());
-            $entityManager->persist($booking);
-            $entityManager->flush();
+            //$entityManager->persist($booking);
+            //$entityManager->flush();
     
             // $this->addFlash(
             //     'success',
@@ -31,7 +31,7 @@ class HomeController extends AbstractController
             // );
 
 
-            return $this->redirectToRoute('car_index');
+            return $this->redirectToRoute('car_index', ['request' => $request->request->all()], 307);
         }
 
       

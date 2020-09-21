@@ -3,8 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Car;
-use App\Entity\CarSearch;
+use App\Entity\Booking;
+use App\Entity\Search;
+use App\Form\SearchType;
 use App\Form\CarType;
+use App\Form\BookingType;
+use App\Repository\SearchRepository;
 use App\Repository\CarRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -17,20 +21,40 @@ use Symfony\Component\Routing\Annotation\Route;
 class CarController extends AbstractController
 {
     /**
-     * @Route("/", name="car_index", methods={"GET"})
+     * @Route("/", name="car_index", methods={"GET","POST"})
      */
-    public function index(CarRepository $carRepository, PaginatorInterface $paginatorInterface, Request $request): Response
+    public function index(SearchRepository $searchRepository, CarRepository $carRepository, PaginatorInterface $paginatorInterface, Request $request): Response
     {    
         // to use the entity car search in findAllWithPagination function (query treatement)
-        $carSearch = new CarSearch();
 
+        // car search treatement
+        $carSearch = new Search(); 
+        $booking = new Booking();  
+        $form = $this->createForm(BookingType:: class,$booking);
+        $form = $this->createForm(SearchType:: class,$carSearch);
+        $form->handleRequest($request);
+        
+        
         $cars = $paginatorInterface->paginate(
-            $carRepository->findAllWithPagination($carSearch),
+            $carRepository->findFilter($booking),
+            
             $request->query->getInt('page', 1), /*page number*/
             6 /*limit per page*/
+            
         );
+        $cars1 = $paginatorInterface->paginate(
+
+            $searchRepository->findByMinPrice($carSearch),
+            $request->query->getInt('page', 1), /*page number*/
+            6 /*limit per page*/
+       
+        );
+        // dd($carRepository->findFilter());
+      
         return $this->render('car/index.html.twig', [
             'cars' => $cars,
+            'cars1' => $cars1,
+            'form' => $form->createView(),
            
         ]);
     }

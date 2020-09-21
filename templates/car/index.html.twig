@@ -1,63 +1,101 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste de voitures{% endblock %}
+{% block title %}Liste de voitures
+{% endblock %}
 
 {% block body %}
 
-    <section id="page-title-area" class="section-padding overlay">
-        <div class="container">
-            <div class="row">
-                <!-- Page Title Start -->
-                <div class="col-lg-12">
-                    <div class="section-title  text-center">
-                        <h2>Nos Annonces</h2>
-                        <span class="title-line"><i class="fa fa-car"></i></span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-                <!-- Page Title End -->
-            </div>
-        </div>
-    </section>
+	<section id="page-title-area" class="section-padding overlay">
+		<div class="container">
+			<div
+				class="row">
+				<!-- Page Title Start -->
+				<div class="col-lg-12">
+					<div class="section-title  text-center">
+						<h2>Nos Annonces</h2>
+						<span class="title-line">
+							<i class="fa fa-car"></i>
+						</span>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</div>
+				</div>
+				<!-- Page Title End -->
+			</div>
+		</div>
+	</section>
+	<br><br>
+	<div class="jumbotron">
+		<div class="container">
+			{{ form_start(form) }}
+			<div class="form-row">
+				<div class="col">
+					{{ form_row(form.minPrice) }}
+				</div>
+				<div class="col">
+					{{ form_row(form.maxPrice) }}
+				</div>
+				<div class="col">
+					{{ form_row(form.carBrand) }}
+				</div>
+				<div class="col">
+					<button class="btn btn-primary">Rechercher</button>
+				</div>
+			</div>
+			{{ form_end(form) }}
+		</div>
+	</div>
 
-    <div class="container">
-        <div class="row">
+	<div class="container">
+		<div class="row">
 
-        <br>
-            {% for car in cars %}        
-                <div class="col-12 col-lg-12 p-1">
-                    <div class="card mb-3">
-                        <div class="row no-gutters align-items-center p-2">
-                            <div class="col-12 col-md-4">
-                                <img src="{{ asset('uploads/images/cars/')}}{{ car.image }}" class="card-img">                  
-                            </div> 
-                            <div class="col">
-                                <div class="card-body">
-                                    
-                                    <p class="card-text">
-                                        <div>Marque : {{car.brand}}</div> 
-                                        <div>Année : {{car.year}}</div>
-                                        <div>Nombre de places : {{car.seats}}</div>
-                                        <div>Transmission : {{car.transmission}}</div>
-                                        <div>Prix par jour : {{car.price}} &euro;</div>
-                                    </p>
-                                    <button class="btn res"><a href="{{ path('booking_new', {'car': car.id})}}">Réserver</a></button>
-                                    <button class="btn voir"><a href="{{ path('blog_details', {'id': car.id}) }}">Voir les details</a></button>
+			<br>
+			{% for car in cars %}
+				<div class="col-12 col-lg-12 p-1">
+					<div class="card mb-3">
+						<div class="row no-gutters align-items-center p-2">
+							<div class="col-12 col-md-4">
+								<img src="{{ asset('uploads/images/cars/')}}{{ car.image }}" class="card-img">
+							</div>
+							<div class="col">
+								<div class="card-body">
 
-                                </div>
-                            </div>                  
-                        </div>                
-                    </div>
-                </div>
-            {% endfor %}
-        </div>                  
-    </div>
+									<p class="card-text">
+										<div>Marque :
+											{{car.brand}}</div>
+										<div>Année :
+											{{car.year}}</div>
+										<div>Nombre de places :
+											{{car.seats}}</div>
+										<div>Transmission :
+											{{car.transmission}}</div>
+										<div>Prix par jour :
+											{{car.price}}
+											&euro;</div>
+									</p>
+									<button class="btn res">
+										<a href="{{ path('booking_new', {'car': car.id})}}">Réserver</a>
+									</button>
+									<button class="btn voir">
+										<a href="{{ path('blog_details', {'id': car.id}) }}">Voir les details</a>
+									</button>
 
-    <a href="{{ path('car_new') }}">Ajouter une voiture</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="navigation text-align-center">
+			{{ knp_pagination_render(cars) }}
+		</div>
 
-    <div class="navigation text-align-center">
-         {{ knp_pagination_render(cars) }}
-    </div>
-    <br>
-    <br>
+
+		<a href="{{ path('car_new') }}">Ajouter une voiture</a>
+
+	</div>
+
+
+	<br>
+	<br>
 {% endblock %}

@@ -7,6 +7,7 @@ use App\Entity\Car;
 use App\Entity\Model;
 use App\Form\BookingType;
 use App\Form\CarSearchType;
+use App\Repository\CarRepository;
 use App\Repository\BookingRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -44,13 +45,6 @@ class BookingController extends AbstractController
         $form = $this->createForm(BookingType::class, $booking);
         $form->handleRequest($request);
 
-        // car search treatement
-        $carSearch = new CarSearch();
-        $form = $this->createForm(CarSearchType:: class,$carSearch);
-        $form->handleRequest($request);
-
-
-       
         if ($form->isSubmitted() && $form->isValid()) {
              
 

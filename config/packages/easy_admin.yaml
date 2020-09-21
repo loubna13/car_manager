@@ -1,5 +1,5 @@
 easy_admin:
-    site_name: 'Car Rent -  <b>Espace Admin</b>'
+    site_name: 'Auto Rent -  <b>Espace Admin</b>'
     design:
       
       brand_color: '#DA251D'
@@ -45,14 +45,14 @@ easy_admin:
                   - PickLocation
                   - PickDate
                   - ReturnDate
-                  - Model
+                  - Car
                   - {property: 'user', label: 'Client'}
             form:
               fields:
                   - PickLocation
                   - PickDate
                   - ReturnDate
-                  -  Model
+                  -  Car
                   - {property: 'user', label: 'Client'}
         Car:
             class: App\Entity\Car
@@ -64,6 +64,8 @@ easy_admin:
                   - year
                   - price
                   - { property: 'image', type: 'image', base_path: '%app.path.car_images%' }
+                  - seats
+                  - transmission
                   - isNew
             form:
               fields:
@@ -71,6 +73,8 @@ easy_admin:
                   - year
                   - price
                   - { property: 'imageFile', type: 'vich_image', base_path: '%app.path.car_images%' }
+                  - seats
+                  - transmission
                   - isNew
         #     class: App\Entity\Menu
         #     label: 'Menus'

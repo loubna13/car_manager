@@ -34,13 +34,19 @@
                                             </strong>{{ booking.car.year }}</li>
                                             <li><strong>Nombre de places :<br>
                                             </strong>{{ booking.car.seats }}</li>
-                                        </ul>
-                                </div>
-                                <p>{{ booking.car.price }} &euro; : par jour</p>
-                                <button type="button" class="btn"><a href="{{ path('booking_index')}}">Payer en ligne</a></button>
-                                <br>
-                                <a href="{{ path('car_index') }}">Revenir à la liste</a>
-                                  
+                                            <li><strong>Transmission :<br>
+                                            </strong>{{ booking.car.transmission}}</li>
+                                       
+                                
+                                            <li><strong>Prix :<br>
+                                            <p></strong>{{ booking.car.price }} &euro; : par jour</p></li>
+                                       </ul>
+                                       <br>
+                                    <button type="button" class="btn"><a href="{{ path('booking_index')}}">Payer en ligne</a></button>
+                                    <br>
+                                    <br>
+                                    <a href="{{ path('car_index') }}">Revenir à la liste</a>
+                                </div>  
                                 {# <a href="{{ path('booking_calendar') }}">Voir le calendrier</a>#}
 						</div>
 					</article>

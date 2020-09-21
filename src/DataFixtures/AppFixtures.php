@@ -69,7 +69,7 @@ class AppFixtures extends Fixture
             //generer des voitures pour chaque modele
             $models = [$model1,$model2];
             foreach($models as $m){
-                $rand = rand(3,10);
+                $rand = rand(3,5);
 
 
                 for($i=1; $i <= $rand; $i++){
@@ -81,18 +81,12 @@ class AppFixtures extends Fixture
                     $car->setPrice($this->faker->numberBetween($min = 80, $max = 700));
                     $car->setIsNew($this->faker->boolean($chanceOfGettingTrue = 50));
                     $car->setSeats($this->faker->randomElement($array = array(4,5)));
-                    $car->setTransmission($this->faker->randomElement($array = array (5,8)));
+                    $car->setTransmission($this->faker->randomElement($array = array ('Automatique','Manuelle')));
                     $manager->persist($car);
          
                  }
 
             }
-
-
-
-
-
-
        
 
         // $product = new Product();

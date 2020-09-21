@@ -3,9 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\Car;
-use App\Entity\CarSearch;
-use Doctrine\ORM\Query;
+use App\Entity\Booking;
 use App\Form\CarType;
+use Doctrine\ORM\Query;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -21,6 +21,90 @@ class CarRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Car::class);
     }
+
+
+  
+    
+
+    public function findFilter(Booking $booking)
+    {
+        
+           $qb = $this->createQueryBuilder('c');
+        //    $qb->select('c.id, b.pickDate, b.returnDate, c.brand')
+        //     ->join('c.bookings', "b")
+        //     ->getQuery()
+        //     ->getResult();
+        //      return $qb;
+       
+        if ($booking->getPickDate()) {
+            $qb = $qb
+            ->select('c.id, c.image, c.brand, c.year, c.seats, c.transmission, c.price, b.pickDate, b.returnDate')
+            ->join('c.bookings',"b")
+            ->andWhere('b.pickDate >= :date')
+            ->setParameter('date', $booking->getPickDate());            
+                  
+             }
+        if ($booking->getReturnDate()) {
+            $qb = $qb
+             ->andWhere('b.returnDate <= :date')
+             ->setParameter('date', $booking->getReturnDate());
+
+        
+            }
+            
+    
+       
+       //     dd($qb->getQuery()->getResult());
+        return $qb->getQuery()->getResult();
+                 
+          
+    }
+
+    /*
+    * @return Query
+    */
+    public function findByMinPrice(Search $carsearch): Query
+    
+    {
+       $query = $this->createQueryBuilder('c');
+
+       if($carsearch->getMinPrice()){
+           $query = $query
+           ->atWhere('c.price > :minprice')
+           ->setParameter('minprice', $carsearch->getMinPrice());
+       }
+
+       if($carsearch->getMaxPrice()){
+        $query = $query
+        ->atWhere('c.price < :maxprice')
+        ->setParameter('maxprice', $carsearch->getMaxPrice());
+       }
+       
+
+        if ($carsearch->getCarBrand()) {
+            $qb = $qb
+        ->andWhere('c.brand = :carbrand')
+        ->setParameter('carbrand', $carsearch->getCarBrand());
+
+        
+            }
+            return $query->getQuery()->getResult();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // public function findFilter($form)
     // {
@@ -60,34 +144,7 @@ class CarRepository extends ServiceEntityRepository
     //     ;
     // }
 
-    public function findAllWithPagination(CarSearch $carSearch) : Query{
-
-        $qb = $this->createQueryBuilder('c');
-
-        if ($carSearch->getPickLocation()) {
-            $qb = $qb->andWhere('c.pickLocation = :pickLocation')
-            ->setParameter('pickLocation', $carSearch->getPickLocation());
-            }
-
-        if ($carSearch->getPickDate()) {
-        
-            $qb->andWhere('c.pickDate >= '.date('Y-m-d H:i:s'));
-           
-        
-             }
-        if ($carSearch->getReturnDate()) {
-            $qb->andWhere('c.returnDate <= '.date('Y-m-d H:i:s'));
-        
-            }
-
-        if ($carSearch->getBrand()) {
-                $qb = $qb->andWhere('c.brand = :brand')
-                ->setParameter('brand', $carSearch->getBrand());
-                }
-
-        return $qb->getQuery();
-          
-    }
+    
 
     // /**
     //  * @return Car[] Returns an array of Car objects

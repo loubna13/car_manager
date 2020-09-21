@@ -27,6 +27,10 @@ class CarFilterType extends AbstractType
         ->add('price', IntegerType::class, [
             'required' => false
         ])
+        ->add('image', TextType::class, [
+            'label'=>'photo voiture',
+            'required' => true
+        ])
         ->add('image', FileType::class, [
             'label'=>'photo voiture',
             'required' => true

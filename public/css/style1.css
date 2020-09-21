@@ -373,7 +373,7 @@ a.slicknav_btn {
 /*== Header Bottom CSS End ==*/
 
 /*== Slider Area CSS Start ==*/
-
+/* 
 .single-slide-item {
   background-image: url("../images/banner.jpg");
   background-position: center center;
@@ -480,7 +480,7 @@ a.slicknav_btn {
 /*== Slider Area CSS End ==*/
 
 /*== About Area CSS Start ==*/
-
+/* 
 .about-content {
   line-height: 2.3em;
 }
@@ -524,32 +524,13 @@ a.slicknav_btn {
   position: absolute;
   top: 0;
   width: 100%;
-}
+} */
 
 /*== About Area CSS End ==*/
 
-/*== Partner Area CSS Start ==*/
-
-#partner-area {
-  background-color: #eaeaea;
-  padding: 20px 0;
-}
-
-.single-partner {
-  height: 105px;
-  text-align: center;
-}
-
-.partner-content-wrap.owl-carousel img {
-  margin: auto;
-  width: auto;
-}
-
-/*== Partner Area CSS End ==*/
-
 /*== Service Area CSS Start ==*/
 
-.service-item {
+/* .service-item {
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
   color: #222;
@@ -575,7 +556,7 @@ a.slicknav_btn {
   box-shadow: none;
   border: 1px solid #ffd000;
   padding: 50px 20px;
-}
+} */
 
 /*== Service Area CSS End ==*/
 
@@ -583,7 +564,7 @@ a.slicknav_btn {
 
 /*== Fun Fact Area CSS Start ==*/
 
-#funfact-area {
+/* #funfact-area {
   background-image: url("../images/funfact-bg.jpg");
   background-size: cover;
   background-position: center center;
@@ -618,12 +599,12 @@ a.slicknav_btn {
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
-}
+} */
 
 /*== Fun Fact Area CSS End ==*/
 
 /*== Choose Car Area CSS Start ==*/
-
+/* 
 #choose-car.section-padding {
   padding-bottom: 70px;
 }
@@ -649,11 +630,11 @@ a.slicknav_btn {
   background-color: #ffd000 !important;
   background-color: #ffd000 !important;
   color: #fff !important;
-}
+} */
 
 /* Popular Cars Css Start */
 
-.popucar-menu {
+/* .popucar-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -815,12 +796,12 @@ a.slicknav_btn {
   background-color: #ffd000;
   color: #fff;
   border-color: #ffd000;
-}
+} */
 
 /* Popular Cars Css End */
 
 /* Newest Cars Css Start */
-
+/* 
 .newcar-menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -965,13 +946,13 @@ a.slicknav_btn {
 
 .package-list li:first-child {
   border-top: 1px solid #999;
-}
+} */
 
 /*== Pricing Area CSS End ==*/
 
 /*== Testimonial Area CSS Start ==*/
 
-.single-testimonial {
+/* .single-testimonial {
   background-color: #1e2228;
   color: #fff;
   font-weight: 600;
@@ -1037,7 +1018,7 @@ a.slicknav_btn {
 
 /*== Article Area CSS Start ==*/
 
-.single-article {
+/* .single-article {
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   padding: 10px;
@@ -1142,14 +1123,15 @@ a.slicknav_btn {
 .readmore-btn:hover {
   background-color: #ffd000;
   color: #fff;
-}
+}  */
 
-/*== Article Area CSS End ==*/
+/*== Article Area CSS End == */
 
 /*== Footer Area CSS Start ==*/
 
 #footer-area a {
   color: #ffd000;
+  position: fixed;
 }
 
 .footer-widget-area {
@@ -1187,38 +1169,6 @@ a.slicknav_btn {
 
 .single-footer-widget img {
   margin-bottom: 20px;
-}
-
-.newsletter-area {
-  margin-top: 20px;
-}
-
-.newsletter-area form {
-  position: relative;
-}
-
-.newsletter-area input {
-  background-color: transparent;
-  border: 1px solid #ffd000;
-  border-radius: 2px;
-  color: #fff;
-  height: 55px;
-  padding: 10px;
-  padding-right: 70px;
-  width: 100%;
-}
-
-.newsletter-area .newsletter-btn {
-  background-color: #ffd000;
-  border: 0 none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 17px;
-  height: 100%;
-  position: absolute;
-  right: 1px;
-  top: 0;
-  width: 50px;
 }
 
 .recent-post li {

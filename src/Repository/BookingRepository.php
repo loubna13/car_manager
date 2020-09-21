@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Repository;
-
-use App\Entity\Booking;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -18,6 +16,8 @@ class BookingRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Booking::class);
     }
+
+    
 
     // /**
     //  * @return Booking[] Returns an array of Booking objects
