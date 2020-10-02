@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste de voitures
+{% endblock %}
+
+{% block body %}
+<section id="page-title-area" class="section-padding overlay">
+		<div class="container">
+			<div
+				class="row">
+				<!-- Page Title Start -->
+				<div class="col-lg-12">
+					<div class="section-title  text-center">
+						<h2>Nos Annonces</h2>
+						<span class="title-line">
+							<i class="fa fa-car"></i>
+						</span>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</div>
+				</div>
+				<!-- Page Title End -->
+			</div>
+		</div>
+	</section>
+	
+{% for res in resultats %}
+
+<div class="col-12 col-lg-12 p-1">
+					<div class="card mb-3">
+						<div class="row no-gutters align-items-center p-2">
+							<div class="col-12 col-md-4">
+								<img src="{{ asset('uploads/images/cars/')}}{{ res.image }}" class="card-img">
+							</div>
+							<div class="col">
+								<div class="card-body">
+
+									<p class="card-text">
+										<div>Marque :
+											{{res.brand}}</div>
+										<div>Année :
+											{{res.year}}</div>
+										<div>Nombre de places :
+											{{res.seats}}</div>
+										<div>Transmission :
+											{{res.transmission}}</div>
+										<div>Prix par jour :
+											{{res.price}}
+											&euro;</div>
+									</p>
+									<button class="btn res">
+										<a href="{{ path('booking_new', {'car': res.id})}}">Réserver</a>
+									</button>
+									<button class="btn voir">
+										<a href="{{ path('blog_details', {'id': res.id}) }}">Voir les details</a>
+									</button>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+{% endfor %}
+{% endblock %}

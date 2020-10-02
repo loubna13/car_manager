@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Booking;
 use App\Entity\Car;
+use App\Entity\Model;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;

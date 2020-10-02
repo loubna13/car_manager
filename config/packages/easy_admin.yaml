@@ -1,8 +1,8 @@
 easy_admin:
-    site_name: 'Auto Rent -  <b>Espace Admin</b>'
+    site_name: 'AUTO RENT-  <b> Administration </b>'
     design:
       
-      brand_color: '#DA251D'
+      brand_color: '#ffd000'
     list:
         batch_actions: [{ name: 'delete', ask_confirm: true }]
         
@@ -42,17 +42,19 @@ easy_admin:
             list:
               title: "Liste des reservations"
               fields:
-                  - PickLocation
-                  - PickDate
-                  - ReturnDate
-                  - Car
+                  - pickLocation
+                  - pickDate
+                  - returnDate
+                  - car
+                  - model
                   - {property: 'user', label: 'Client'}
             form:
               fields:
-                  - PickLocation
-                  - PickDate
-                  - ReturnDate
-                  -  Car
+                  - pickLocation
+                  - pickDate
+                  - returnDate
+                  - car
+                  - model
                   - {property: 'user', label: 'Client'}
         Car:
             class: App\Entity\Car
@@ -67,6 +69,7 @@ easy_admin:
                   - seats
                   - transmission
                   - isNew
+                  - model
             form:
               fields:
                   - brand
@@ -76,6 +79,36 @@ easy_admin:
                   - seats
                   - transmission
                   - isNew
+                  - model
+
+        Comment:
+            class: App\Entity\Comment
+            label: 'Commentaires'
+            list:
+              title: "Liste des commentaires"
+              fields:
+                  - {property: 'email', label: 'Client'}
+                  - title
+                  - message
+            form:
+              fields:
+                  - {property: 'email', label: 'Client'}
+                  - title
+                  - message
+        Model:
+            class: App\Entity\Model
+            label: 'Modéles'
+            list:
+              title: "Liste des modéles"
+              fields:
+                  - label
+                  - cars
+            form:
+              fields:
+                  - label
+                  - cars
+        
+
         #     class: App\Entity\Menu
         #     label: 'Menus'
         #     list:
@@ -91,18 +124,4 @@ easy_admin:
         #           - plat
         #           - dessert
         #           - { property: 'imageFile', type: 'vich_image', base_path: '%app.path.chef_images%' }
-        # Commentaire:
-        #     class: App\Entity\Commentaire
-        #     label: 'Commentaires'
-        #     list:
-        #       title: "Liste des commentaires"
-        #       fields:
-        #           - {property: 'email', label: 'Client'}
-        #           - titre
-        #           - message
-        #     form:
-        #       fields:
-        #           - {property: 'email', label: 'Client'}
-        #           - titre
-        #           - message
-        
+       

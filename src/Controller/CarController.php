@@ -5,11 +5,15 @@ namespace App\Controller;
 use App\Entity\Car;
 use App\Entity\Booking;
 use App\Entity\Search;
+
+use App\Entity\Model;
 use App\Form\SearchType;
 use App\Form\CarType;
 use App\Form\BookingType;
+use App\Entity\ModelType;
 use App\Repository\SearchRepository;
 use App\Repository\CarRepository;
+use App\Repository\BookingRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -42,18 +46,19 @@ class CarController extends AbstractController
             6 /*limit per page*/
             
         );
-        $cars1 = $paginatorInterface->paginate(
+        // $cars1 = $paginatorInterface->paginate(
 
-            $searchRepository->findByMinPrice($carSearch),
-            $request->query->getInt('page', 1), /*page number*/
-            6 /*limit per page*/
+        //     $searchRepository->findByMinPrice($carSearch),
+        //     $request->query->getInt('page', 1), /*page number*/
+        //     6 /*limit per page*/
        
-        );
+        // );
         // dd($carRepository->findFilter());
       
         return $this->render('car/index.html.twig', [
             'cars' => $cars,
-            'cars1' => $cars1,
+            //'result'=>$carRepository->findByDateandBrand($picklocation,$brand,$pickdate,$returndate),
+            // 'cars1' => $cars1,
             'form' => $form->createView(),
            
         ]);

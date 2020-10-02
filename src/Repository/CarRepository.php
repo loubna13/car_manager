@@ -4,7 +4,9 @@ namespace App\Repository;
 
 use App\Entity\Car;
 use App\Entity\Booking;
+use App\Entity\Model;
 use App\Form\CarType;
+use App\Form\ModelType;
 use Doctrine\ORM\Query;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -25,7 +27,25 @@ class CarRepository extends ServiceEntityRepository
 
   
     
-
+    
+    
+    public function findByDateandBrand($picklocation, $brand, $pickdate, $returndate)
+    {  
+         
+        return $this->createQueryBuilder('c')
+            ->innerJoin('c.bookings','b')
+            ->andWhere('c.brand = :val')
+            ->andWhere('b.pickLocation = :val2')
+            ->andWhere('b.pickDate >= :val3')
+            ->andWhere('b.returnDate <= :val4')
+            ->setParameter('val', $brand)
+            ->setParameter('val2', $picklocation)
+            ->setParameter('val3', $pickdate)
+            ->setParameter('val4', $returndate)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
     public function findFilter(Booking $booking)
     {
         
@@ -54,7 +74,7 @@ class CarRepository extends ServiceEntityRepository
             
     
        
-       //     dd($qb->getQuery()->getResult());
+            // dd($qb->getQuery()->getResult());
         return $qb->getQuery()->getResult();
                  
           
@@ -63,33 +83,35 @@ class CarRepository extends ServiceEntityRepository
     /*
     * @return Query
     */
-    public function findByMinPrice(Search $carsearch): Query
+    // public function findByMinPrice(Search $carsearch): Query
     
-    {
-       $query = $this->createQueryBuilder('c');
+    // {
+    //    $query = $this->createQueryBuilder('c');
 
-       if($carsearch->getMinPrice()){
-           $query = $query
-           ->atWhere('c.price > :minprice')
-           ->setParameter('minprice', $carsearch->getMinPrice());
-       }
+    //    if($carsearch->getMinPrice()){
+    //        $query = $query
+    //        ->atWhere('c.price > :minprice')
+    //        ->setParameter('minprice', $carsearch->getMinPrice());
+    //    }
 
-       if($carsearch->getMaxPrice()){
-        $query = $query
-        ->atWhere('c.price < :maxprice')
-        ->setParameter('maxprice', $carsearch->getMaxPrice());
-       }
+    //    if($carsearch->getMaxPrice()){
+    //     $query = $query
+    //     ->atWhere('c.price < :maxprice')
+    //     ->setParameter('maxprice', $carsearch->getMaxPrice());
+    //    }
        
 
-        if ($carsearch->getCarBrand()) {
-            $qb = $qb
-        ->andWhere('c.brand = :carbrand')
-        ->setParameter('carbrand', $carsearch->getCarBrand());
+    //     if ($carsearch->getCarBrand()) {
+    //         $qb = $qb
+    //     ->andWhere('c.brand = :carbrand')
+    //     ->setParameter('carbrand', $carsearch->getCarBrand());
 
         
-            }
-            return $query->getQuery()->getResult();
-    }
+    //         }
+    //         return $query->getQuery()->getResult();
+    // }
+
+
 
 
 

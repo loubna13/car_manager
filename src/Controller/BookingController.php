@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Booking;
 use App\Entity\Car;
 use App\Entity\Model;
+use App\Form\ModelType;
 use App\Form\BookingType;
 use App\Form\CarSearchType;
 use App\Repository\CarRepository;
@@ -26,6 +27,7 @@ class BookingController extends AbstractController
      */
     public function index(BookingRepository $bookingRepository): Response
     {
+   
         return $this->render('booking/index.html.twig', [
             'bookings' => $bookingRepository->findAll(),
         ]);
@@ -34,14 +36,18 @@ class BookingController extends AbstractController
     /**
      * @Route("/new/{car}", name="booking_new", methods={"GET","POST"})
      * @IsGranted("IS_AUTHENTICATED_FULLY")
+     * @param Model $model
      * @param Car $car
      * @param Request $request
      * @return Response
      */
-    public function new(Request $request, Car $car,CarRepository $carRepository): Response
+    public function new(Request $request, Car $car, Model $model,CarRepository $carRepository): Response
     {
         $booking = new Booking();
         $booking->setCar($car);//lier l'entité car a l'entité booking pour que je puisse récupérer la var car dans le form de booking new
+        $booking->setModel($model);
+        $booking->setUser($this->getUser());
+        
         $form = $this->createForm(BookingType::class, $booking);
         $form->handleRequest($request);
 
@@ -52,7 +58,7 @@ class BookingController extends AbstractController
             # Le plus simple, vérifier s'il n'existe pas déjà une reservation a cette date.
 
 
-            $booking->setUser($this->getUser());
+          
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($booking);
             $entityManager->flush();

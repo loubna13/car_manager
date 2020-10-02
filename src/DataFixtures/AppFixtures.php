@@ -62,6 +62,11 @@ class AppFixtures extends Fixture
             $model1->setLabel("volkswagon");
             $manager->persist($model1);
 
+            $model3 = new Model();
+            $model3->setLabel("Mercedez benz");
+            $manager->persist($model3);
+
+
             $model2 = new Model();
             $model2->setLabel("Ford");
             $manager->persist($model2); 

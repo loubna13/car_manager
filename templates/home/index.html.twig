@@ -3,42 +3,44 @@
 {% block title %} CAR RENT{% endblock %}
 
 {% block body %}
-
-    <!--== SlideshowBg Area Start ==-->
-    <section id="slideslow-bg">
+  <!--== SlideshowBg Area Start ==-->
+      <section id="slideslow-bg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="slideshowcontent">
                         <div class="display-table">
                             <div class="display-table-cell">
+                                 <br>
+                                 <br>
                                 <h1>Trouvons ensemble la voiture idéale..</h1>
-                                <p>Choisir une de nos voiture et bénificier de 15% DISCOUNT <br> OFFRE RESERVEE AU CLIENTELE</p>
-
+                                <p>Choisir une de nos voiture et bénificier de 15% DISCOUNT <br> OFFRE RESERVEE AU CLIENTELE</p> 
                                 <div class="book-ur-car">
-                                   {{ form_start(form) }}
+
+                                 {{ form_start(form) }}
                                         <div class="car-choose bookinput-item">
-                                          <label>Depart de : </label>
+                                         
                                             {{ form_widget(form.pickLocation, { 'attr' :{'placeholder':'lieu de départ'}}) }}
                                         </div>
 
                                         <div class="pick-date bookinput-item">
-                                           <label>Début de location </label>
-                                            {{ form_widget(form.pickDate, { 'attr' :{'placeholder':''}}) }}
+                                           
+                                            {{ form_widget(form.pickDate, { 'attr' :{'placeholder':'Debut de location','id' : 'startDate2'}}) }}
                                         </div>
 
                                         <div class="retern-date bookinput-item">
-                                           <label>Fin de location </label>
-                                            {{ form_widget(form.returnDate, { 'attr' :{'placeholder':''}}) }}
+                                         
+                                            {{ form_widget(form.returnDate, { 'attr' :{'placeholder':'Fin de location','id' : 'endDate2'}}) }}
                                         </div>
 
                                         <div class="car-choose bookinput-item">
-                                            <label>Marque de voiture</label>
-                                            {{ form_widget(form.car, { 'attr' :{'placeholder':'marque de voiture'}}) }}
+                                           
+                                            {{ form_widget(form.car, { 'attr' :{'placeholder':'Marque de voiture'}}) }}
                                        
                                         </div>
-                                         <div><button type="submit" class="btn"><a href="{{ path('car_index')}}"></a> Rechercher</button></div>
+                                         <div><button type="submit" class="btn"><a href="{{ path('car_index')}}"></a>Rechercher</button></div>
                                    {{ form_end(form) }}
+                                   
                                 </div>
                             </div>
                         </div>
@@ -50,6 +52,84 @@
     <!--== SlideshowBg Area End ==-->
     <br>
     <br>
+
+
+    <!--== About Us Area Start ==-->
+    <section id="about-area" class="section-padding">
+        <div class="container">
+
+            <div class="row">
+                <!-- About Content Start -->
+                <div class="col-lg-6">
+                    <div class="display-table">
+                        <div class="display-table-cell">
+                            <div class="about-content">
+                            <h2>A Propos de nous</h2>
+                                <p>
+                                   Depuis 2009, AUTO RENT révolutionne l’industrie du voyage. Un moteur de recherche dédié au location de     tout type de véhicule.
+                                    Aujourd’hui, nous traitons plus de 40000 recherches annuelles sur nos plateformes et aidons des milliers de voyageurs dans le monde entier à être sûrs de leurs décisions. À chaque recherche, CAR RENT parcourt des dizaines d'annonces afin de présenter aux voyageurs les informations nécessaires pour trouver les locations de voitures qui leur conviennent
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- About Content End -->
+
+                <!-- About Video Start -->
+                <div class="col-lg-6">
+                    <div class="about-image">
+                        <img src="{{ asset('images/home-2-about.png')}}" alt="JSOFT">
+                    </div>
+                </div>
+                <!-- About Video End -->
+            </div>
+
+            <!-- About Fretutes Start -->
+            <div class="about-feature-area">
+                <div class="row">
+                    <!-- Single Fretutes Start -->
+                    <div class="col-lg-4">
+                        <div class="about-feature-item active">
+                            <i class="fa fa-car"></i>
+                            <h3>Notre gamme de véhicule</h3>
+                            <p>
+                                Des petites citadines aux supercars, vous trouverez assurément le modèle qui vous convient dans notre vaste gamme de véhicules. Que vous soyez à la recherche d’une voiture élégante et compacte ou d’une berline haut de gamme, la qualité est toujours au rendez-vous.
+                            
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Single Fretutes End -->
+
+                    <!-- Single Fretutes Start -->
+                    <div class="col-lg-4">
+                        <div class="about-feature-item">
+                            <i class="fa fa-car"></i>
+                            <h3>Personnaliser votre voyage</h3>
+                            <p>                            
+                                Faites de votre voyage une expérience inoubliable avec nos options supplémentaires. Gardez le contact où que vous soyez avec le Wi-Fi mobile et laissez-vous guider avec le GPS haut de gamme.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Single Fretutes End -->
+
+                    <!-- Single Fretutes Start -->
+                    <div class="col-lg-4">
+                        <div class="about-feature-item">
+                            <i class="fa fa-car"></i>
+                            <h3>La location de véhicules avec AUTO RENT</h3>
+                            <p>                            
+                            Avec AUTO RENT, vous êtes sûr de toujours arriver à bon port, confortablement installé dans un véhicule parmi les plus récents et avec l’assurance d’un service excellent. Présents dans 165 pays, nous sommes là pour faciliter votre voyage, vous permettant ainsi de mieux profiter de votre prochaine destination.</p>
+                        </div>
+                    </div>
+                    <!-- Single Fretutes End -->
+                </div>
+            </div>
+            <!-- About Fretutes End -->
+        </div>
+    </section>
+    <!--== About Us Area End ==-->
+    
     <!--== Fun Fact Area Start ==-->
     <section id="funfact-area" class="overlay section-padding">
         <div class="container">
@@ -364,5 +444,6 @@
         </div>
     </section>
     <!--== Team Area End ==-->
+
 {% endblock %}
 

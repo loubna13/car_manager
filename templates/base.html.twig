@@ -81,12 +81,17 @@
 
                                 <!--== Social Icons Start ==-->
                                 <div class="col-lg-3 text-right">
-                                    <div class="header-social-icons">
-                                        <a href="#"><i class="fa fa-behance"></i></a>
-                                        <a href="#"><i class="fa fa-pinterest"></i></a>
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    </div>
+                                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+					
+                                    <li><em> BONJOUR {{ app.user.Name }} !</em> <a href="{{ path('app_logout')}}" class="deconnexion">Deconnexion</a></li>
+                                                    
+                                         {% else %}
+                                            <a href="{{path('app_register')}}">S'inscrire !</a>
+                                            <a href="{{path('app_login')}}">Se connecter</a>
+                                            <p>Bonjour visiteur!</p>
+                                                                                               
+                                         {% endif %}   
+                                      
                                 </div>
                                 <!--== Social Icons End ==-->
                             </div>
@@ -110,7 +115,7 @@
                                 <div class="col-lg-8 d-none d-xl-block">
                                     <nav class="mainmenu alignright">
                                             <ul>
-                                                <li class="active">
+                                                <li class="">
                                                     <a href="{{ path('home')}}">Accueil</a>
                                                 </li>
                                                 <li>
@@ -119,9 +124,9 @@
                                                 <li>
                                                     <a class="nav-link" href="{{ path('car_index')}}">Véhicules</a>
                                                 </li>
-                                                <li>
+                                                {# <li>
                                                     <a class="nav-link" href="{{ path('booking_index')}}">Réservations</a>
-                                                </li>
+                                                </li> #}
                                                  <li>
                                                     <a class="nav-link" href="{{ path('blog')}}">Blog</a>
                                                 </li>
@@ -131,25 +136,14 @@
                                                 <li>
                                                     <a class="nav-link" href="{{ path('contact_contact')}}">Contact</a>
                                                 </li>
-                                                
-                                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-					
-                                                  <li><em> BONJOUR {{ app.user.Name }} !</em> <a href="{{ path('app_logout')}}" class="deconnexion"> Deconnexion</a></li>
-                                                    
-                                                {% else %}
-                                                    <li><a href="{{path('app_register')}}">S'inscrire !</a></li>
-                                                    <li><a href="{{path('app_login')}}">Se connecter</a></li>
-                                                    <li> Bonjour, visiteur!</li>                                                   
-                                                {% endif %}   
-                                        
                                                 {% if is_granted('ROLE_ADMIN') %}
-                                                    <li>
-                                                        <button type="button" class="btn btn-dark float-right">
-                                                                    <a href="{{path('easyadmin')}}" target="_blank">Espace admin</a>
-                                                        </button> 
-                                                            
+                                                    <li>                                                        
+                                                      <a href="{{path('easyadmin')}}" target="_blank">Espace admin</a>
                                                     </li> 
-                                                {% endif %}        
+                                                {% endif %} 
+                                                
+                                                  
+                                                      
                     
                                             </ul>
                                     </nav>
@@ -168,7 +162,7 @@
 
             {% block footer %}
             <!--== Footer Area Start ==-->
-            <section id="footer-area">
+            <section id="footer-area" class="position-sticky">
                 <!-- Footer Widget Start -->
                 <div class="footer-widget-area">
                     <div class="container">
@@ -228,7 +222,7 @@
                                             <li><i class="fa fa-mobile"></i> +33 6.61.05.64.94</li>
                                             <li><i class="fa fa-envelope"></i> loubnabarkat@outlook.com</li>
                                         </ul>
-                                        <a href="https://goo.gl/maps/b5mt45MCaPB2" class="map-show" target="_blank">Localisation</a>
+                                        <a href="https://www.google.com/maps/place/Auto+Rent+Paris+Vitry-sur-Seine/@48.7960213,2.4085283,17z/data=!3m1!4b1!4m5!3m4!1s0x47e6730b11e16453:0x4530624787bf9a8a!8m2!3d48.7960213!4d2.410717" class="map-show" target="_blank">Localisation</a>
                                     </div>
                                 </div>
                             </div>

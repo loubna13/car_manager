@@ -1,5 +1,11 @@
 {{ form_start(form) }}
    <div class="container">
+            <div class="form-row">
+	            <div class="form-group col-md-6">
+	                <label >Model</label>
+	              {{ form_widget(form.model ,{ 'attr' :{'placeholder':'Model','class':'form-control'}})}}
+	            </div>
+	        </div>
 	        <div class="form-row">
 	            <div class="form-group col-md-6">
 	                <label >Marque</label>

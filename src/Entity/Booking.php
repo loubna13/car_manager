@@ -45,6 +45,11 @@ class Booking
      */
     private $user;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Model::class, inversedBy="bookings")
+     */
+    private $model;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -110,7 +115,21 @@ class Booking
     }
     public function __toString(): ?string
     {
-        return $this->car;
+        return '';
     }
+
+    public function getModel(): ?Model
+    {
+        return $this->model;
+    }
+
+    public function setModel(?Model $model): self
+    {
+        $this->model = $model;
+
+        return $this;
+    }
+   
+      
 
 }

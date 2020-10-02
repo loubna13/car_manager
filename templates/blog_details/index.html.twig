@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello BlogDetailsController!{% endblock %}
+{% block title %}Blog Details{% endblock %}
 
 {% block body %}
 <!--== Page Title Area Start ==-->
@@ -10,7 +10,7 @@
                 <!-- Page Title Start -->
                 <div class="col-lg-12">
                     <div class="section-title  text-center">
-                        <h2>WLIQUAM SIT AMET URNA EULLAM</h2>
+                        <h2>Details vehicule</h2>
                         <span class="title-line"><i class="fa fa-car"></i></span>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     </div>
@@ -28,56 +28,82 @@
                 <!-- Car List Content Start -->
                 <div class="col-lg-8">
                     <div class="car-details-content">
-                        <h2>WLIQUAM SIT AMET URNA EULLAM</h2>
+                        <h2>NOUVELLE BMW M3</h2>
                         <div class="car-preview-crousel">
+                            <div class="single-car-preview">
+                                <img src="{{ asset('images/car/bmwM32.jpg')}}" alt="JSOFT">
+                            </div>
+                            <div class="single-car-preview">
+                                <img src="{{ asset('images/car/bmm3.jpg')}}" alt="JSOFT">
+                            </div>
                             <div class="single-car-preview">
                                 <img src="{{ asset('images/car/car-5.jpg')}}" alt="JSOFT">
                             </div>
-                            <div class="single-car-preview">
-                                <img src="{{ asset('images/car/car-1.jpg')}}" alt="JSOFT">
-                            </div>
-                            <div class="single-car-preview">
-                                <img src="{{ asset('images/car/car-6.jpg')}}" alt="JSOFT">
-                            </div>
                         </div>
                         <div class="car-details-info blog-content">
-                            <p>The Aventador LPER 720-4 50° ise a limited (200 units – 100 Coupe and 100 Roadster) versione of thed Aventadored LP 700-4 commemorating the 50th anniversary of Lamborghini. It included ised increased engine power to 720 PS (530 kW; 710 bhp) via a new specific engine calibration, enlarged and extended front air intakes and the aerodynamic splitter.</p>
+                            <p>Pour arriver à cette performance, la nouvelle génération de BMW M3 s’appuie sur deux niveaux de performance. La BMW M3 propose 480 chevaux avec une boîte manuelle à 6 vitesses, alors que la BMW M3 Competition fait grimper la cavalerie à 510 pur-sang. Cette version est d’office proposée avec une boîte M à 8 vitesses avec Drivelogic.</p>
 
 
-                            <p>Lorem ipsum dolor sit , consectetur elited. Autem expedita veroed numquam obcaecati rerumed, asperiores illoedses nulla totam.Am inventore cupiditate suscipit explicabo possimus asperiores, dolorem dignissimos, enimedrt rem sit sed quaerat fuga nesciunt sequi nemo magnamede quasi labore minima, mollitiaeded, assumenda id dolor. Nisied eiused veritatis doloribus, id officiis.</p>
+                            <p>
+                             Par rapport aux modèles précédents, le moteur à six cylindres en ligne des nouvelles M3 et M4 offre une puissance accrue de 49 et 60 bourrins pour un couple maximal de 650 Nm. De plus, grâce à la technologie M TwinPower Turbo et au concept de haut régime, le moteur excelle par sa réponse spontanée dans toutes les plages de vitesse. Il est le fruit du travail des motoristes et concepteurs de la BMW M4 GT3, qui deviendra le nouveau modèle haut de gamme de BMW M GmbH en compétition à partir de la saison 2022.</p>
 
-                            <p class="thme-blockquote">The Aventadorarged and extended front air intakes and the aerodynamic splittere xtended front air intakes and the aerodynamic splitter.</p>
+                            <p>Pour maîtriser cette horde sauvage, BMW a fait appel à la technologie M xDrive. Ce système de traction intégrale, relié au différentiel actif M Sport, est capable de régler la répartition du couple moteur sur les trains roulants. Le pilote peut choisir entre trois modes : 4WD (4 roues motrices, équilibré), 4WD Sport (il privilégie le couple sur le train arrière et 2WD pour un fonctionnement exclusivement en propulsion avec DSC désactivé.</p>
 
-                            <p>The Aventador LPER 720-4 50° ise a limited (200 units – 100 Coupe and 100 Roaborghini. It included ised increased engine power to 720 PS (530 kW; 710 bhp) via a new engine calibration, enlarged and extended front air intakes and the aerodynamic splitter.</p>
+                            <div id="page-content" class="archives-page">
+                                <div class="container">
+                                    <div class="row">
+                                        <div id="main-content" class="col-md-10">
+                                            <article class="contact">
+                                              
+                                                   <h3>Ajouter un commentaire</h3>
+                                                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                                    {{ form_start(form) }}
+                                                      {{ form_row(form) }}
+                                                        <button class="btn">{{ button_label|default('Envoyer') }}</button>
+                                                    {{ form_end(form) }}
+                                            
+                                                    {% endif %} 
+                                                    <br>  
+                                            
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>                 
+                            </div>
 
-                            <div class="review-area">
-                                <h3>Write Your Comment</h3>
+                            
+                             
                                 <div class="review-form">
                                     <form action="index.html">
-                                        <div class="row">
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="name-input">
-                                                    <input type="text" placeholder="Full Name">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="email-input">
-                                                    <input type="email" placeholder="Email Address">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="message-input">
-                                            <textarea name="review" cols="30" rows="5" placeholder="Message"></textarea>
-                                        </div>
-
-                                        <div class="input-submit">
-                                            <button type="submit">Comment</button>
+                                        <div id="page-content" class="archives-page">
+                                                
+                                                    <div class="row">
+                                                        <div id="main-content" class="col-md-10">
+                                                            <article class="contact">
+                                                                <div class="art-header">
+                                                                    <div class="col-md-10">   
+                                                                    <h5>Commentaires utilisateurs</h5>
+                                                                    </div>
+                                                                   <br>
+                                                                   <br>
+                                                                        {% for comment in comments %}
+                                                                            <h6>{{ comment.email }}</h6>
+                                                                            <div class="col-md-12">
+                                                                                <div class="row">
+                                                                                    <p><em>{{ comment.title }}</em></p>
+                                                                                    <p><em>{{ comment.message }}</em></p>
+                                                                                    <p><em>{{ comment.createdAt ? comment.createdAt|date('d-m-Y') : '' }}</em></p>
+                                                                                </div>
+                                                                            </div>
+                                                                        {% endfor %}
+                                                                </div>
+                                                            </article>
+                                                        </div>
+                                                    </div>                
                                         </div>
                                     </form>
                                 </div>
-                            </div>
+                           <a href="{{ path('car_index') }}">Retour</a>
                         </div>
                     </div>
                 </div>
@@ -88,18 +114,18 @@
                     <div class="sidebar-content-wrap m-t-50">
                         <!-- Single Sidebar Start -->
                         <div class="single-sidebar">
-                            <h3>For More Informations</h3>
+                            <h3>Pour plus d'informations</h3>
 
                             <div class="sidebar-body">
-                                <p><i class="fa fa-mobile"></i> +8801816 277 243</p>
-                                <p><i class="fa fa-clock-o"></i> Mon - Sat 8.00 - 18.00</p>
+                                <p><i class="fa fa-mobile"></i> 06.61.05.64.94</p>
+                                <p><i class="fa fa-clock-o"></i> Lun- Sam 9.00 - 18.00</p>
                             </div>
                         </div>
                         <!-- Single Sidebar End -->
 
                         <!-- Single Sidebar Start -->
                         <div class="single-sidebar">
-                            <h3>Rental Tips</h3>
+                            <h3>Astuces</h3>
 
                             <div class="sidebar-body">
                                 <ul class="recent-tips">
@@ -108,8 +134,8 @@
                                             <a href="#"><img src="{{ asset('images/we-do/service1-img.png')}}" alt="JSOFT"></a>
                                         </div>
                                         <div class="recent-tip-body">
-                                            <h4><a href="#">How to Enjoy Losses Angeles Car Rentals</a></h4>
-                                            <span class="date">February 5, 2018</span>
+                                            <h4><a href="#">Les embouteillages à Paris peuvent être assez impressionnants. Prévoyez donc de partir tôt si vous devez vous rendre à l’aéroport.</a></h4>
+                                            <span class="date">Le 5 Février 2018</span>
                                         </div>
                                     </li>
 
@@ -118,8 +144,8 @@
                                             <a href="#"><img src="{{ asset('images/we-do/service3-img.png')}}" alt="JSOFT"></a>
                                         </div>
                                         <div class="recent-tip-body">
-                                            <h4><a href="#">How to Enjoy Losses Angeles Car Rentals</a></h4>
-                                            <span class="date">February 5, 2018</span>
+                                            <h4><a href="#">Appelée « boulevard périphérique », la rocade qui entoure Paris comporte 2 chaussées. Dans la chaussée intérieure, la circulation s'effectue dans le sens des aiguilles d'une montre et dans la chaussée extérieure, dans le sens inverse des aiguilles d'une montre.</a></h4>
+                                            <span class="date">Le 5 Février 2018</span>
                                         </div>
                                     </li>
 
@@ -128,8 +154,8 @@
                                             <a href="#"><img src="{{ asset('images/we-do/service2-img.png')}}" alt="JSOFT"></a>
                                         </div>
                                         <div class="recent-tip-body">
-                                            <h4><a href="#">How to Enjoy Losses Angeles Car Rentals</a></h4>
-                                            <span class="date">February 5, 2018</span>
+                                            <h4><a href="#">Les embouteillages à Paris peuvent être assez impressionnants. Prévoyez donc de partir tôt si vous devez vous rendre à l’aéroport.</a></h4>
+                                            <span class="date">Le 5 Février 2018</span>
                                         </div>
                                     </li>
 
@@ -138,8 +164,8 @@
                                             <a href="#"><img src="{{ asset('images/we-do/service3-img.png')}}" alt="JSOFT"></a>
                                         </div>
                                         <div class="recent-tip-body">
-                                            <h4><a href="#">How to Enjoy Losses Angeles Car Rentals</a></h4>
-                                            <span class="date">February 5, 2018</span>
+                                            <h4><a href="#">Conformément à la législation française, vous devez avoir dans votre véhicule un alcootest, un gilet de haute visibilité et un triangle de signalisation. Assurez-vous que la compagnie de location de voitures vous a fourni tous ces équipements avant de prendre la route.</a></h4>
+                                            <span class="date">Le 5 Février 2018</span>
                                         </div>
                                     </li>
                                 </ul>
@@ -149,7 +175,7 @@
 
                         <!-- Single Sidebar Start -->
                         <div class="single-sidebar">
-                            <h3>Connect with Us</h3>
+                            <h3>Nous suivre sur :</h3>
 
                             <div class="sidebar-body">
                                 <div class="social-icons text-center">

@@ -28,9 +28,15 @@ class Model
      */
     private $cars;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Booking::class, mappedBy="model")
+     */
+    private $bookings;
+
     public function __construct()
     {
         $this->cars = new ArrayCollection();
+        $this->bookings = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -48,6 +54,10 @@ class Model
         $this->label = $label;
 
         return $this;
+    }
+    public function __toString(): ?string
+    {
+        return $this->label;
     }
 
     /**
@@ -75,6 +85,38 @@ class Model
             // set the owning side to null (unless already changed)
             if ($car->getModel() === $this) {
                 $car->setModel(null);
+            }
+        }
+
+        return $this;
+     
+    }
+
+    /**
+     * @return Collection|Booking[]
+     */
+    public function getBookings(): Collection
+    {
+        return $this->bookings;
+    }
+
+    public function addBooking(Booking $booking): self
+    {
+        if (!$this->bookings->contains($booking)) {
+            $this->bookings[] = $booking;
+            $booking->setModel($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBooking(Booking $booking): self
+    {
+        if ($this->bookings->contains($booking)) {
+            $this->bookings->removeElement($booking);
+            // set the owning side to null (unless already changed)
+            if ($booking->getModel() === $this) {
+                $booking->setModel(null);
             }
         }
 

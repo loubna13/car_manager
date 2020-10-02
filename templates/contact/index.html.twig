@@ -41,9 +41,91 @@
     </div>
     <!--== Contact Page Area End ==-->
     <!--== Map Area Start ==-->
-    <div class="maparea">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29213.038296132225!2d90.39150904197642!3d23.760577791538438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c783c3404f0d%3A0x76ae0d2edabc81df!2sHatir+Jheel!5e0!3m2!1sen!2sbd!4v1517941663187"></iframe>
-    </div>
+      <head>
+    <title>Simple Markers</title>
+    
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+      "use strict";
+
+      /*initialise map*/
+
+      function initMap() {
+        const myLatLng = {
+          lat: 48.8566969,
+          lng: 2.3514616,
+        };
+        const epinayLatLng = {
+          lat: 48.9525181,
+          lng: 2.3145039,
+        };
+        const enghienLatLng = {
+          lat: 48.9699732,
+          lng: 2.3068482,
+        };
+        const meudonLatLng = {
+          lat: 48.8126688,
+          lng: 2.2385432,
+        };
+        const melunLatLng = {
+          lat: 48.539927,
+          lng: 2.6608169,
+        };
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 7,
+          center: myLatLng,
+        });
+        new google.maps.Marker({
+          position: myLatLng,
+          map,
+          title: "Paris",
+        });
+        new google.maps.Marker({
+          position: epinayLatLng,
+          map,
+          title: "Epinay Sur Seine",
+        });
+        new google.maps.Marker({
+          position: enghienLatLng,
+          map,
+          title: "Enghien Les Bains",
+        });
+        new google.maps.Marker({
+          position: meudonLatLng,
+          map,
+          title: "Meudon",
+        });
+        new google.maps.Marker({
+          position: melunLatLng,
+          map,
+          title: "Melun",
+        });
+      }
+    </script>
+  </head>
+ 
+    <div id="map"></div>
+       <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+       <script
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDILQQPtOZV-mk-CwzMZi8v8b2YtplM1Rk&callback=initMap&libraries=&v=weekly"
+         defer>
+        </script>
+        <br>
+        <br>
     <!--== Map Area End ==-->
 {% endblock %}
 
