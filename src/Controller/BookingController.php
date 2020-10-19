@@ -27,6 +27,8 @@ class BookingController extends AbstractController
      */
     public function index(BookingRepository $bookingRepository): Response
     {
+        $test=$bookingRepository->findAll();
+           // dd($test);
    
         return $this->render('booking/index.html.twig', [
             'bookings' => $bookingRepository->findAll(),
@@ -36,22 +38,22 @@ class BookingController extends AbstractController
     /**
      * @Route("/new/{car}", name="booking_new", methods={"GET","POST"})
      * @IsGranted("IS_AUTHENTICATED_FULLY")
-     * @param Model $model
      * @param Car $car
      * @param Request $request
      * @return Response
      */
-    public function new(Request $request, Car $car, Model $model,CarRepository $carRepository): Response
+    public function new(Request $request, Car $car,CarRepository $carRepository): Response
     {
         $booking = new Booking();
         $booking->setCar($car);//lier l'entité car a l'entité booking pour que je puisse récupérer la var car dans le form de booking new
-        $booking->setModel($model);
+        $booking->setModel($car->getModel());
         $booking->setUser($this->getUser());
         
         $form = $this->createForm(BookingType::class, $booking);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+          
              
 
             # TODO : Vérification de disponibilité du car

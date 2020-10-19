@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Car;
 use App\Entity\Booking;
 use App\Entity\Model;
+use App\Entity\Search;
 use App\Form\CarType;
 use App\Form\ModelType;
 use Doctrine\ORM\Query;
@@ -29,19 +30,17 @@ class CarRepository extends ServiceEntityRepository
     
     
     
-    public function findByDateandBrand($picklocation, $brand, $pickdate, $returndate)
+    public function findByDateandBrand($brand,$pickdate, $returndate)
     {  
          
         return $this->createQueryBuilder('c')
             ->innerJoin('c.bookings','b')
-            ->andWhere('c.brand = :val')
-            ->andWhere('b.pickLocation = :val2')
-            ->andWhere('b.pickDate >= :val3')
-            ->andWhere('b.returnDate <= :val4')
-            ->setParameter('val', $brand)
-            ->setParameter('val2', $picklocation)
-            ->setParameter('val3', $pickdate)
-            ->setParameter('val4', $returndate)
+            ->andWhere('c.brand = :brand')
+            ->andWhere('b.pickDate = :pickDate')
+            ->andWhere('b.returnDate = :returnDate')
+            ->setParameter('brand', $brand)
+            ->setParameter('pickDate', $pickdate)
+            ->setParameter('returnDate', $returndate)
             ->getQuery()
             ->getResult()
         ;
@@ -80,24 +79,23 @@ class CarRepository extends ServiceEntityRepository
           
     }
 
-    /*
-    * @return Query
-    */
-    // public function findByMinPrice(Search $carsearch): Query
     
-    // {
-    //    $query = $this->createQueryBuilder('c');
+    public function findByMinPrice($minprice,$maxprice)
+    
+     {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.price > :minPrice')
+           ->setParameter('minPrice', $minprice)
+            ->andWhere('c.price < :maxPrice')
+            ->setParameter('maxPrice', $maxprice)
+              ->getQuery()
+               ->getResult()
+            ;
+       }
 
-    //    if($carsearch->getMinPrice()){
-    //        $query = $query
-    //        ->atWhere('c.price > :minprice')
-    //        ->setParameter('minprice', $carsearch->getMinPrice());
-    //    }
-
-    //    if($carsearch->getMaxPrice()){
-    //     $query = $query
-    //     ->atWhere('c.price < :maxprice')
-    //     ->setParameter('maxprice', $carsearch->getMaxPrice());
+    //   
+    //    
+    //     
     //    }
        
 

@@ -8,6 +8,9 @@
 .btn{
   background-color: #ffd000;
 }
+.navigation{
+  color:#ffd000;
+}
 
 /*
 *
@@ -183,7 +186,7 @@
   padding: 8px 0;
 }
 
-#header-top i {
+.header-top i {
   color: #ffd000;
   font-size: 15px;
   margin-right: 2px;
@@ -373,7 +376,7 @@ a.slicknav_btn {
 /*== Header Bottom CSS End ==*/
 
 /*== Slider Area CSS Start ==*/
-/* 
+
 .single-slide-item {
   background-image: url("../images/banner.jpg");
   background-position: center center;
@@ -1450,8 +1453,8 @@ body,
   text-transform: capitalize;
 }
 
-.book-ur-car select.custom-select {
-  background-image: url("assets/img/caret-cion.png");
+.book-ur-car .custom-select {
+  background-image: url("../images/caret-cion.png");
   background-position: right 12px center;
   background-size: 12px auto;
 }

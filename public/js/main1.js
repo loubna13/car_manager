@@ -26,67 +26,67 @@
         --------------------------------- */
 
         // Home Page 0ne Date Picker JS
-        var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-        $('#startDate').datepicker({
-            uiLibrary: 'bootstrap4',
-            iconsLibrary: 'fontawesome',
-            minDate: today,
-            maxDate: function () {
-                return $('#endDate').val();
-            }
-        });
+        // var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+        // $('#startDate').datepicker({
+        //     uiLibrary: 'bootstrap4',
+        //     iconsLibrary: 'fontawesome',
+        //     minDate: today,
+        //     maxDate: function () {
+        //         return $('#endDate').val();
+        //     }
+        // });
 
-        $('#endDate').datepicker({
-            uiLibrary: 'bootstrap4',
-            iconsLibrary: 'fontawesome',
-            minDate: function () {
-                return $('#startDate').val();
-            }
-        });
+        // $('#endDate').datepicker({
+        //     uiLibrary: 'bootstrap4',
+        //     iconsLibrary: 'fontawesome',
+        //     minDate: function () {
+        //         return $('#startDate').val();
+        //     }
+        // });
 
         // Partner Carousel
-        $(".partner-content-wrap").owlCarousel({
-            loop: true,
-            margin: 15,
-            autoplay: true,
-            autoplayTimeout: 1500,
-            nav: false,
-            dots: false,
-            rtl: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 5
-                }
-            }
-        }); // Partner Carousel End
+        // $(".partner-content-wrap").owlCarousel({
+        //     loop: true,
+        //     margin: 15,
+        //     autoplay: true,
+        //     autoplayTimeout: 1500,
+        //     nav: false,
+        //     dots: false,
+        //     rtl: true,
+        //     responsive: {
+        //         0: {
+        //             items: 1
+        //         },
+        //         600: {
+        //             items: 3
+        //         },
+        //         1000: {
+        //             items: 5
+        //         }
+        //     }
+        // }); // Partner Carousel End
 
 
-        // Funfact Count JS
-        $('.counter').counterUp({
-            delay: 10,
-            time: 1000
-        });
+        // // Funfact Count JS
+        // $('.counter').counterUp({
+        //     delay: 10,
+        //     time: 1000
+        // });
 
 
         // Choose Popular Car Isotope
-        $(".popucar-menu a, .home2-car-filter a").click(function () {
+        // $(".popucar-menu a, .home2-car-filter a").click(function () {
 
-            $(".popucar-menu a, .home2-car-filter a").removeClass('active');
-            $(this).addClass('active');
+        //     $(".popucar-menu a, .home2-car-filter a").removeClass('active');
+        //     $(this).addClass('active');
 
-            var filterValue = $(this).attr('data-filter');
-            $(".popular-car-gird").isotope({
-                filter: filterValue
-            });
+        //     var filterValue = $(this).attr('data-filter');
+        //     $(".popular-car-gird").isotope({
+        //         filter: filterValue
+        //     });
 
-            return false;
-        }); // Choose Popular Car Isotope End
+        //     return false;
+        // }); // Choose Popular Car Isotope End
 
 
         // Choose Newest Car Isotope
@@ -126,18 +126,18 @@
 
 
         // Video Bg JS 
-        $('#mobileapp-video-bg').YTPlayer({
-            fitToBackground: true,
-            videoURL: 'm5_AKjDdqaU',
-            containment: '#mobile-app-area',
-            quality: 'highres',
-            loop: true,
-            showControls: false,
-            opacity: 1,
-            mute: true
-        }); // Video Bg End
+        // $('#mobileapp-video-bg').YTPlayer({
+        //     fitToBackground: true,
+        //     videoURL: 'm5_AKjDdqaU',
+        //     containment: '#mobile-app-area',
+        //     quality: 'highres',
+        //     loop: true,
+        //     showControls: false,
+        //     opacity: 1,
+        //     mute: true
+        // }); // Video Bg End
 
-        // Click to Scroll TOP
+        // Click to Scroll TOP car icon
         $(".scroll-top").click(function () {
             $('html, body').animate({
                 scrollTop: 0
@@ -196,17 +196,17 @@
         });
 
         // Home Page 3 Slider Start
-        $("#home-slider-area").owlCarousel({
-            loop: true,
-            items: 1,
-            autoplay: true,
-            autoplayHoverPause: false,
-            autoplayTimeout: 3000,
-            nav: false,
-            dots: true,
-            animateOut: 'slideOutDown',
-            animateIn: 'slideInDown'
-        });
+        // $("#home-slider-area").owlCarousel({
+        //     loop: true,
+        //     items: 1,
+        //     autoplay: true,
+        //     autoplayHoverPause: false,
+        //     autoplayTimeout: 3000,
+        //     nav: false,
+        //     dots: true,
+        //     animateOut: 'slideOutDown',
+        //     animateIn: 'slideInDown'
+        // });
         // Home Page 3 Slider End
 
         // Car Details Slider Start

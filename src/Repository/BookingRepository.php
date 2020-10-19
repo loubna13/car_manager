@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Entity\Booking;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**

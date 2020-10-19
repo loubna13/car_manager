@@ -46,19 +46,20 @@ class CarController extends AbstractController
             6 /*limit per page*/
             
         );
-        // $cars1 = $paginatorInterface->paginate(
+        $cars1 = $paginatorInterface->paginate(
 
-        //     $searchRepository->findByMinPrice($carSearch),
-        //     $request->query->getInt('page', 1), /*page number*/
-        //     6 /*limit per page*/
+            $searchRepository->findByMinPrice($carSearch),
+            $request->query->getInt('page', 1), /*page number*/
+            6 /*limit per page*/
        
-        // );
+        );
+        
         // dd($carRepository->findFilter());
+        
       
         return $this->render('car/index.html.twig', [
             'cars' => $cars,
             //'result'=>$carRepository->findByDateandBrand($picklocation,$brand,$pickdate,$returndate),
-            // 'cars1' => $cars1,
             'form' => $form->createView(),
            
         ]);

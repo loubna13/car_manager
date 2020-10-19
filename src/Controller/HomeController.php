@@ -4,7 +4,9 @@ namespace App\Controller;
 use App\Entity\Booking;
 use App\Entity\Car;
 use App\Entity\Model;
+use App\Entity\Search;
 use App\Form\BookingType;
+use App\Form\SearchType;
 use App\Repository\CarRepository;
 use Knp\Component\Pager\PaginatorInterface;
 
@@ -22,11 +24,13 @@ class HomeController extends AbstractController
     public function index(Request $request, CarRepository $carrepository, paginatorInterface $paginatorInterface)
     {
         
+        // $carSearch = new Search();
         $booking = new Booking();
         $form = $this->createForm(BookingType::class, $booking);
+        // $form = $this->createForm(SearchType:: class,$carSearch);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if($form->isSubmitted() && $form->isValid()) {
         
             $picklocation= $form->get('pickLocation')->getData();
             $car= $form->get('car')->getData();
@@ -36,6 +40,9 @@ class HomeController extends AbstractController
             $pickdate= $form->get('pickDate')->getData();
 
             $returndate= $form->get('returnDate')->getData();
+            // $minprice= $form->get('minPrice')->getData();
+
+            // $maxprice= $form->get('maxPrice')->getData();
 
         
             //dd($form->getData(),$picklocation);
@@ -50,7 +57,8 @@ class HomeController extends AbstractController
             //     "Votre réservation  a été prise en compte avec succès!"
             // );
 
-            $resultats=$carrepository->findByDateandBrand($picklocation,$brand,$pickdate,$returndate);
+            $resultats=$carrepository->findByDateandBrand($brand,$pickdate,$returndate);
+            //$resultats2=$carrepository->findByMinPrice($minprice,$maxprice);
 
            
             //dd($resultats);
@@ -58,7 +66,8 @@ class HomeController extends AbstractController
         
 
             return $this->render('car/listeresultats.html.twig', [
-                'resultats'=> $resultats
+                'resultats'=> $resultats,
+                //'resultats2'=> $resultats2
                                            
             ]);
         }

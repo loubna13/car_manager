@@ -18,22 +18,26 @@
                                 <div class="book-ur-car">
 
                                  {{ form_start(form) }}
-                                        <div class="car-choose bookinput-item">
+                                        <div class="car-choose bookinput-item ">
+                                     
                                          
                                             {{ form_widget(form.pickLocation, { 'attr' :{'placeholder':'lieu de départ'}}) }}
                                         </div>
 
                                         <div class="pick-date bookinput-item">
+                                           <i class="fas fa-clock-alt"></i>
                                            
-                                            {{ form_widget(form.pickDate, { 'attr' :{'placeholder':'Debut de location','id' : 'startDate2'}}) }}
+                                            {{ form_widget(form.pickDate, { 'attr' :{'placeholder':'Debut de location'}}) }}
                                         </div>
 
                                         <div class="retern-date bookinput-item">
+                                           <i class="fas fa-calendar-alt"></i>
                                          
                                             {{ form_widget(form.returnDate, { 'attr' :{'placeholder':'Fin de location','id' : 'endDate2'}}) }}
+                                            <i class="fas fa-calendar-alt"></i>
                                         </div>
 
-                                        <div class="car-choose bookinput-item">
+                                        <div class="car-choose bookinput-item ">
                                            
                                             {{ form_widget(form.car, { 'attr' :{'placeholder':'Marque de voiture'}}) }}
                                        

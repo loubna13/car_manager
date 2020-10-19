@@ -29,10 +29,14 @@ class BookingType extends AbstractType
             'required' => true
         ])
         ->add('pickDate', DateType::class, [
-            'widget' => 'single_text',
+            'widget' => 'single_text', 
+            // 'html5' => false,
+            
         ])
         ->add('returnDate', DateType::class, [
             'widget' => 'single_text',
+            // 'html5' => false,
+            
         ])
         ->add('car', EntityType::class, [
             'class' => Car::class,
